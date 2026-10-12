@@ -86,9 +86,7 @@ export default async function ProductPage({ params }: { params: Params }) {
           )}
           {p.imageStatus === "placeholder" ? (
             <p className="text-xs text-ink-faint">Product photo not yet added. The graphic above is a placeholder, not the actual packaging.</p>
-          ) : (
-            <p className="text-xs text-ink-faint">Photo taken from a retailer listing for this educational demo. Replace with licensed images before going live.</p>
-          )}
+          ) : null}
         </div>
 
         <div>
