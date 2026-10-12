@@ -1,0 +1,383 @@
+[
+    { "slug": "pokemon-mega-evolution-perfect-order-booster-bundle-box", "name": "Pokémon Mega Evolution Perfect Order Booster Bundle Box", "source": "https://www.midwestcards.com/pokemon-non-sports-cards/pokemon-mega-evolution-perfect-order-booster-bundle-box/", "guessed": false },
+  { "slug": "pokemon-mega-evolution-perfect-order-pokemon-center-elite-trainer-box", "name": "Pokémon Mega Evolution Perfect Order Pokémon Center Elite Trainer Box", "source": "https://www.midwestcards.com/pokemon-non-sports-cards/pokemon-mega-evolution-perfect-order-pokemon-center-elite-trainer-box/", "guessed": false },
+  { "slug": "pokemon-mega-evolution-perfect-order-booster-6-box-case", "name": "Pokémon Mega Evolution Perfect Order Booster 6 Box Case", "source": "https://www.midwestcards.com/pokemon-non-sports-cards/pokemon-mega-evolution-perfect-order-booster-6-box-case/", "guessed": false },
+  { "slug": "pokemon-mega-evolution-phantasmal-flames-elite-trainer-box", "name": "Pokémon Mega Evolution Phantasmal Flames Elite Trainer Box", "source": "https://www.midwestcards.com/pokemon-non-sports-cards/pokemon-mega-evolution-me2-phantasmal-flames-elite-trainer-box/", "guessed": false },
+  { "slug": "pokemon-mega-evolution-phantasmal-flames-booster-bundle-box", "name": "Pokémon Mega Evolution Phantasmal Flames Booster Bundle Box", "source": "https://www.midwestcards.com/pokemon-non-sports-cards/pokemon-mega-evolution-me2-phantasmal-flames-booster-bundle-box/", "guessed": false },
+  { "slug": "pokemon-mega-evolution-phantasmal-flames-build-and-battle-box", "name": "Pokémon Mega Evolution Phantasmal Flames Build & Battle Box", "source": "https://www.midwestcards.com/pokemon-non-sports-cards/pokemon-mega-evolution-me2-phantasmal-flames-build-battle-box/", "guessed": false },
+  { "slug": "pokemon-mega-evolution-phantasmal-flames-sleeved-booster-pack", "name": "Pokémon Mega Evolution Phantasmal Flames Sleeved Booster Pack", "source": "https://www.midwestcards.com/pokemon-non-sports-cards/pokemon-mega-evolution-me2-phantasmal-flames-sleeved-booster-pack/", "guessed": false },
+  { "slug": "pokemon-mega-evolution-elite-trainer-box", "name": "Pokémon Mega Evolution Elite Trainer Box", "source": "https://www.midwestcards.com/pokemon-non-sports-cards/pokemon-mega-evolution-me1-elite-trainer-box/", "guessed": false },
+  { "slug": "2025-panini-prizm-football-hobby-box", "name": "2025 Panini Prizm Football Hobby Box", "source": "https://www.midwestcards.com/football-cards/2025-panini-prizm-football-hobby-box/", "guessed": false },
+  { "slug": "2025-panini-prizm-football-hobby-blaster-box", "name": "2025 Panini Prizm Football Hobby Blaster Box", "source": "https://www.midwestcards.com/football-cards/2025-panini-prizm-football-hobby-blaster-box/", "guessed": false },
+  { "slug": "2025-panini-prizm-black-football-hobby-box", "name": "2025 Panini Prizm Black Football Hobby Box", "source": "https://www.midwestcards.com/football-cards/2025-panini-prizm-black-football-hobby-box/", "guessed": false },
+  { "slug": "2025-panini-prizm-draft-picks-collegiate-football-hobby-box", "name": "2025 Panini Prizm Draft Picks Collegiate Football Hobby Box", "source": "https://www.midwestcards.com/shop/football-cards/2025-panini-prizm-draft-picks-collegiate-football-hobby-box/", "guessed": false },
+  { "slug": "2025-26-topps-chrome-basketball-hobby-box", "name": "2025/26 Topps Chrome Basketball Hobby Box", "source": "https://www.midwestcards.com/basketball-cards/2025-26-topps-chrome-basketball-hobby-box/", "guessed": false },
+  { "slug": "2025-26-topps-chrome-basketball-sapphire-edition-box", "name": "2025/26 Topps Chrome Basketball Sapphire Edition Box", "source": "https://www.midwestcards.com/basketball-cards/2025-26-topps-chrome-basketball-sapphire-edition-box/", "guessed": false },
+  { "slug": "2025-26-topps-chrome-update-basketball-delight-box", "name": "2025/26 Topps Chrome Update Basketball Delight Box", "source": "https://www.midwestcards.com/products/2025-26-topps-chrome-update-basketball-delight-box", "guessed": false },
+  {
+    "slug": "2026-bowman-chrome-baseball-delight-box",
+    "name": "2026 Bowman Chrome Baseball Delight Box",
+    "source": "https://www.midwestcards.com/products/2026-bowman-chrome-baseball-delight-box",
+    "guessed": true
+  },
+  {
+    "slug": "2026-panini-prizm-baseball-hobby-box",
+    "name": "2026 Panini Prizm Baseball Hobby Box",
+    "source": "https://www.midwestcards.com/products/2026-panini-prizm-baseball-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2026-panini-prizm-baseball-hobby-blaster-box",
+    "name": "2026 Panini Prizm Baseball Hobby Blaster Box",
+    "source": "https://www.midwestcards.com/products/2026-panini-prizm-baseball-hobby-blaster-box",
+    "guessed": true
+  },
+  {
+    "slug": "2026-topps-chrome-baseball-hobby-box",
+    "name": "2026 Topps Chrome Baseball Hobby Box",
+    "source": "https://www.midwestcards.com/products/2026-topps-chrome-baseball-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2021-bowman-chrome-baseball-hobby-box",
+    "name": "2021 Bowman Chrome Baseball Hobby Box",
+    "source": "https://www.midwestcards.com/products/2021-bowman-chrome-baseball-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2021-panini-select-baseball-hobby-box",
+    "name": "2021 Panini Select Baseball Hobby Box",
+    "source": "https://www.midwestcards.com/products/2021-panini-select-baseball-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2023-leaf-trinity-baseball-mega-box",
+    "name": "2023 Leaf Trinity Baseball Mega Box",
+    "source": "https://www.midwestcards.com/products/2023-leaf-trinity-baseball-mega-box",
+    "guessed": true
+  },
+  {
+    "slug": "2025-26-panini-noir-basketball-hobby-box",
+    "name": "2025/26 Panini Noir Basketball Hobby Box",
+    "source": "https://www.midwestcards.com/products/2025-26-panini-noir-basketball-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2025-26-panini-origins-basketball-hobby-box",
+    "name": "2025/26 Panini Origins Basketball Hobby Box",
+    "source": "https://www.midwestcards.com/products/2025-26-panini-origins-basketball-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2026-onit-signature-series-university-of-texas-football-platinum-box",
+    "name": "2026 ONIT Signature Series University of Texas Football Platinum Box",
+    "source": "https://www.midwestcards.com/products/2026-onit-signature-series-university-of-texas-football-platinum-box",
+    "guessed": true
+  },
+  {
+    "slug": "2026-leaf-trinity-football-hobby-box",
+    "name": "2026 Leaf Trinity Football Hobby Box",
+    "source": "https://www.midwestcards.com/products/2026-leaf-trinity-football-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2023-panini-contenders-football-hobby-box",
+    "name": "2023 Panini Contenders Football Hobby Box",
+    "source": "https://www.midwestcards.com/products/2023-panini-contenders-football-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2024-panini-gold-standard-football-hobby-box",
+    "name": "2024 Panini Gold Standard Football Hobby Box",
+    "source": "https://www.midwestcards.com/products/2024-panini-gold-standard-football-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2023-panini-select-football-h2-box",
+    "name": "2023 Panini Select Football H2 Box",
+    "source": "https://www.midwestcards.com/products/2023-panini-select-football-h2-box",
+    "guessed": true
+  },
+  {
+    "slug": "2023-panini-select-football-hobby-box",
+    "name": "2023 Panini Select Football Hobby Box",
+    "source": "https://www.midwestcards.com/products/2023-panini-select-football-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2022-panini-prizm-football-no-huddle-box",
+    "name": "2022 Panini Prizm Football No Huddle Box",
+    "source": "https://www.midwestcards.com/products/2022-panini-prizm-football-no-huddle-box",
+    "guessed": true
+  },
+  {
+    "slug": "2026-27-upper-deck-series-1-hockey-hobby-12-box-case",
+    "name": "2026/27 Upper Deck Series 1 Hockey Hobby 12 Box Case",
+    "source": "https://www.midwestcards.com/products/2026-27-upper-deck-series-1-hockey-hobby-12-box-case",
+    "guessed": true
+  },
+  {
+    "slug": "2023-24-upper-deck-spx-hockey-hobby-box",
+    "name": "2023/24 Upper Deck SPx Hockey Hobby Box",
+    "source": "https://www.midwestcards.com/products/2023-24-upper-deck-spx-hockey-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2023-topps-chrome-formula-1-racing-hobby-box",
+    "name": "2023 Topps Chrome Formula 1 Racing Hobby Box",
+    "source": "https://www.midwestcards.com/products/2023-topps-chrome-formula-1-racing-hobby-box",
+    "guessed": true
+  },
+  {
+    "slug": "2025-topps-wwe-chrome-blaster-box",
+    "name": "2025 Topps WWE Chrome Blaster Box",
+    "source": "https://www.midwestcards.com/products/2025-topps-wwe-chrome-blaster-box",
+    "guessed": true
+  },
+  {
+    "slug": "2026-topps-mars-attacks-christmas-hobby-pack",
+    "name": "2026 Topps Mars Attacks Christmas Hobby Pack",
+    "source": "https://www.midwestcards.com/products/2026-topps-mars-attacks-christmas-hobby-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-tcg-30th-celebration-knock-out-collection-box",
+    "name": "Pokémon TCG: 30th Celebration Knock Out Collection Box",
+    "source": "https://www.midwestcards.com/products/pokemon-tcg-30th-celebration-knock-out-collection-box",
+    "guessed": false
+  },
+  {
+    "slug": "pokemon-mega-evolution-ascended-heroes-tin-box",
+    "name": "Pokémon Mega Evolution Ascended Heroes Tin Box",
+    "source": "https://www.midwestcards.com/products/pokemon-mega-evolution-ascended-heroes-tin-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-paldea-evolved-booster-box",
+    "name": "Pokémon Scarlet & Violet Paldea Evolved Booster Box",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-paldea-evolved-booster-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-prismatic-evolutions-poster-collection-box",
+    "name": "Pokémon Scarlet & Violet Prismatic Evolutions Poster Collection Box",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-prismatic-evolutions-poster-collection-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-sword-and-shield-fusion-strike-booster-pack",
+    "name": "Pokémon Sword & Shield Fusion Strike Booster Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-sword-and-shield-fusion-strike-booster-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-paldea-evolved-checklane-blister-pack",
+    "name": "Pokémon Scarlet & Violet Paldea Evolved Checklane Blister Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-paldea-evolved-checklane-blister-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-mega-evolution-moonlit-tin-6-box-case",
+    "name": "Pokémon Mega Evolution Moonlit Tin 6 Box Case",
+    "source": "https://www.midwestcards.com/products/pokemon-mega-evolution-moonlit-tin-6-box-case",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-151-ultra-premium-collection-box",
+    "name": "Pokémon Scarlet & Violet 151 Ultra Premium Collection Box",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-151-ultra-premium-collection-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-destined-rivals-booster-box",
+    "name": "Pokémon Scarlet & Violet Destined Rivals Booster Box",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-destined-rivals-booster-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-paradox-rift-booster-pack",
+    "name": "Pokémon Scarlet & Violet Paradox Rift Booster Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-paradox-rift-booster-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-mega-evolution-chaos-rising-sleeved-booster-pack",
+    "name": "Pokémon Mega Evolution Chaos Rising Sleeved Booster Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-mega-evolution-chaos-rising-sleeved-booster-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-sword-and-shield-silver-tempest-checklane-blister-pack",
+    "name": "Pokémon Sword & Shield Silver Tempest Checklane Blister Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-sword-and-shield-silver-tempest-checklane-blister-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-mega-evolution-chaos-rising-checklane-blister-pack",
+    "name": "Pokémon Mega Evolution Chaos Rising Checklane Blister Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-mega-evolution-chaos-rising-checklane-blister-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-surging-sparks-booster-pack",
+    "name": "Pokémon Scarlet & Violet Surging Sparks Booster Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-surging-sparks-booster-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-sword-and-shield-astral-radiance-booster-pack",
+    "name": "Pokémon Sword & Shield Astral Radiance Booster Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-sword-and-shield-astral-radiance-booster-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-sword-and-shield-fusion-strike-elite-trainer-box",
+    "name": "Pokémon Sword & Shield Fusion Strike Elite Trainer Box",
+    "source": "https://www.midwestcards.com/products/pokemon-sword-and-shield-fusion-strike-elite-trainer-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-obsidian-flames-booster-pack",
+    "name": "Pokémon Scarlet & Violet Obsidian Flames Booster Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-obsidian-flames-booster-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-mega-evolution-pitch-black-elite-trainer-box",
+    "name": "Pokémon Mega Evolution Pitch Black Elite Trainer Box",
+    "source": "https://www.midwestcards.com/products/pokemon-mega-evolution-pitch-black-elite-trainer-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-mega-evolution-ascended-heroes-booster-bundle-box",
+    "name": "Pokémon Mega Evolution Ascended Heroes Booster Bundle Box",
+    "source": "https://www.midwestcards.com/products/pokemon-mega-evolution-ascended-heroes-booster-bundle-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-destined-rivals-elite-trainer-box",
+    "name": "Pokémon Scarlet & Violet Destined Rivals Elite Trainer Box",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-destined-rivals-elite-trainer-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-sword-and-shield-vivid-voltage-booster-pack",
+    "name": "Pokémon Sword & Shield Vivid Voltage Booster Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-sword-and-shield-vivid-voltage-booster-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-prismatic-evolutions-super-premium-collection-box",
+    "name": "Pokémon Scarlet & Violet Prismatic Evolutions Super-Premium Collection Box",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-prismatic-evolutions-super-premium-collection-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-mega-evolution-chaos-rising-elite-trainer-box",
+    "name": "Pokémon Mega Evolution Chaos Rising Elite Trainer Box",
+    "source": "https://www.midwestcards.com/products/pokemon-mega-evolution-chaos-rising-elite-trainer-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-paldea-evolved-elite-trainer-box",
+    "name": "Pokémon Scarlet & Violet Paldea Evolved Elite Trainer Box",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-paldea-evolved-elite-trainer-box",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-sword-and-shield-lost-origin-booster-pack",
+    "name": "Pokémon Sword & Shield Lost Origin Booster Pack",
+    "source": "https://www.midwestcards.com/products/pokemon-sword-and-shield-lost-origin-booster-pack",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-scarlet-and-violet-prismatic-evolutions-poster-collection-6-box-case",
+    "name": "Pokémon Scarlet & Violet Prismatic Evolutions Poster Collection 6 Box Case",
+    "source": "https://www.midwestcards.com/products/pokemon-scarlet-and-violet-prismatic-evolutions-poster-collection-6-box-case",
+    "guessed": true
+  },
+  {
+    "slug": "pokemon-mega-evolution-pitch-black-build-and-battle-box",
+    "name": "Pokémon Mega Evolution Pitch Black Build & Battle Box",
+    "source": "https://www.midwestcards.com/products/pokemon-mega-evolution-pitch-black-build-and-battle-box",
+    "guessed": true
+  },
+  {
+    "slug": "magic-the-gathering-reality-fracture-commander-deck-4-deck-case",
+    "name": "Magic: The Gathering Reality Fracture Commander Deck 4 Deck Case",
+    "source": "https://www.midwestcards.com/products/magic-the-gathering-reality-fracture-commander-deck-4-deck-case",
+    "guessed": true
+  },
+  {
+    "slug": "magic-the-gathering-reality-fracture-bundle-box",
+    "name": "Magic: The Gathering Reality Fracture Bundle Box",
+    "source": "https://www.midwestcards.com/products/magic-the-gathering-reality-fracture-bundle-box",
+    "guessed": true
+  },
+  {
+    "slug": "magic-the-gathering-foundations-commander-deck-5-box-case",
+    "name": "Magic: The Gathering Foundations Commander Deck 5 Box Case",
+    "source": "https://www.midwestcards.com/products/magic-the-gathering-foundations-commander-deck-5-box-case",
+    "guessed": true
+  },
+  {
+    "slug": "2026-topps-mls-chrome-soccer-hobby-box",
+    "name": "2026 Topps MLS Chrome Soccer Hobby Box",
+    "source": "https://s3.us-east-1.amazonaws.com/medusajs.cloud-data-prod-use1-20241127093450366600000001/ed2d3d71debc8fb6ae7/bc-14685-519413-29758baaa1658b3c78a5164f6f3f8b7be4f47caa55192ce8a6aa0b7e5f4b21d4-01M3J6PNWHS6Q055S358PWR4W4.jpg",
+    "guessed": false
+  },
+  {
+    "slug": "2025-26-topps-chrome-bundesliga-soccer-hobby-box",
+    "name": "2025/26 Topps Chrome Bundesliga Soccer Hobby Box",
+    "source": "https://cdn11.bigcommerce.com/s-cft20qcvqs/images/stencil/1280x1280/products/15145/477468/202526-topps-chrome-bundesliga-soccer-hobby-box__24668.1773797008.jpg?c=1",
+    "guessed": false
+  },
+  {
+    "slug": "2025-26-topps-uefa-club-competitions-chrome-soccer-hobby-box",
+    "name": "2025/26 Topps UEFA Club Competitions Chrome Soccer Hobby Box",
+    "source": "https://cdn11.bigcommerce.com/s-cft20qcvqs/images/stencil/1280x1280/products/16022/490303/202526-topps-uefa-club-competitions-chrome-soccer-hobby-box__50011.1778122652.jpg?c=1",
+    "guessed": false
+  },
+  {
+    "slug": "yu-gi-oh-ccg-chaos-origins-booster-box",
+    "name": "Yu-Gi-Oh CCG: Chaos Origins Booster Box",
+    "source": "https://cdn11.bigcommerce.com/s-cft20qcvqs/images/stencil/500x659/products/15799/512170/yu-gi-oh-ccg-chaos-origins-booster-box__90442.1785571777.jpg?c=1",
+    "guessed": false
+  },
+  {
+    "slug": "one-piece-tcg-the-worlds-strongest-warriors-booster-box",
+    "name": "One Piece TCG: The World's Strongest Warriors Booster Box",
+    "source": "https://cdn11.bigcommerce.com/s-cft20qcvqs/images/stencil/1280x1280/products/14942/516539/one-piece-tcg-op-17-booster-box__13587.1788166796.jpg?c=1",
+    "guessed": false
+  },
+  {
+    "slug": "one-piece-tcg-romance-dawn-booster-box",
+    "name": "One Piece TCG: Romance Dawn Booster Box",
+    "source": "https://www.midwestcards.com/products/one-piece-tcg-romance-dawn-booster-box",
+    "guessed": false
+  },
+  {
+    "slug": "one-piece-tcg-premium-booster-one-piece-card-the-best-volume-2-box",
+    "name": "One Piece TCG: Premium Booster One Piece Card The Best Volume 2 Box",
+    "source": "https://www.midwestcards.com/products/one-piece-tcg-premium-booster-prb-02-box",
+    "guessed": false
+  },
+  {
+    "slug": "dragon-ball-super-tcg-dual-evolution-booster-fb09-box",
+    "name": "Dragon Ball Super TCG: Dual Evolution Booster (FB09) Box",
+    "source": "https://www.midwestcards.com/pokemon-non-sports-cards/dragon-ball-super-tcg-dual-evolution-booster-fb09-box/",
+    "guessed": false
+  },
+  {
+    "slug": "dragon-ball-super-tcg-fusion-world-saiyans-pride-booster-box",
+    "name": "Dragon Ball Super TCG: Fusion World Saiyan's Pride Booster Box",
+    "source": "https://www.midwestcards.com/pokemon-non-sports-cards/dragon-ball-super-tcg-fusion-world-fb08-booster-box/",
+    "guessed": false
+  },
+  {
+    "slug": "dragon-ball-super-tcg-fusion-world-ultra-limit-booster-fb-04-box",
+    "name": "Dragon Ball Super TCG: Fusion World Ultra Limit Booster (FB-04) Box",
+    "source": "https://www.midwestcards.com/shop/pokemon-non-sports-cards/dragon-ball-super-tcg-fusion-world-ultra-limit-fb04-booster-box/",
+    "guessed": false
+  }
+]
