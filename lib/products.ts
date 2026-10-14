@@ -19,8 +19,6 @@ import { slugify } from "./format";
 import generatedImages from "./images.generated.json";
 import extraItems from "./catalog-extras.generated.json";
 import { applyExtras, type Extra } from "./catalog-merge";
-import extraItems from "./catalog-extras.generated.json";
-import { applyExtras, type Extra } from "./catalog-merge";
 
 export type CategorySlug =
   | "baseball" | "basketball" | "football" | "soccer" | "hockey" | "other-sports"
