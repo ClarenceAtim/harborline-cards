@@ -8,8 +8,7 @@ import { sendSellerEmail, sendCustomerEmail } from "@/lib/email";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-// Best-effort per-instance rate limit (5 requests / 10 min / IP). On serverless this is per warm
-// instance only; add Vercel WAF / Upstash for stronger limits. See README.
+// Best-effort per-instance rate limit (5 requests / 10 min / IP).
 const hits = new Map<string, number[]>();
 function limited(ip: string) {
   const now = Date.now();
@@ -66,17 +65,24 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "We could not save your order. Please try again." }, { status: 500 });
   }
 
-  // Emails run after the order is safely stored. Failures are recorded, never fatal.
+  // Emails run after the order is safely stored. Any failure is recorded and never fatal.
   if (!order.duplicate) {
-    const [seller, cust] = await Promise.all([sendSellerEmail(order), sendCustomerEmail(order)]);
-    const status = (r: { ok: boolean; skipped?: boolean }) => (r.ok ? "sent" : r.skipped ? "skipped" : "failed");
-    const err = [seller.error && `seller: ${seller.error}`, cust.error && `customer: ${cust.error}`].filter(Boolean).join(" | ") || null;
-    await setEmailStatus(order.id, {
-      seller_email_status: status(seller),
-      customer_email_status: status(cust),
-      email_error: err,
-    });
-    if (!seller.ok) console.warn(`Seller notification not sent for ${order.orderNumber}: ${seller.error}`);
+    try {
+      const [seller, cust] = await Promise.all([
+        sendSellerEmail(order).catch((e: any) => ({ ok: false, skipped: false, error: String(e?.message ?? e) })),
+        sendCustomerEmail(order).catch((e: any) => ({ ok: false, skipped: false, error: String(e?.message ?? e) })),
+      ]);
+      const status = (r: { ok: boolean; skipped?: boolean }) => (r.ok ? "sent" : r.skipped ? "skipped" : "failed");
+      const err = [seller.error && `seller: ${seller.error}`, cust.error && `customer: ${cust.error}`].filter(Boolean).join(" | ") || null;
+      await setEmailStatus(order.id, {
+        seller_email_status: status(seller),
+        customer_email_status: status(cust),
+        email_error: err,
+      });
+      if (!seller.ok) console.warn(`Seller notification not sent for ${order.orderNumber}: ${seller.error}`);
+    } catch (e) {
+      console.error("email step failed (order was saved)", e);
+    }
   }
 
   return NextResponse.json({
