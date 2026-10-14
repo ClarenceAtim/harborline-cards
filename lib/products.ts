@@ -17,6 +17,10 @@
 
 import { slugify } from "./format";
 import generatedImages from "./images.generated.json";
+import extraItems from "./catalog-extras.generated.json";
+import { applyExtras, type Extra } from "./catalog-merge";
+import extraItems from "./catalog-extras.generated.json";
+import { applyExtras, type Extra } from "./catalog-merge";
 
 export type CategorySlug =
   | "baseball" | "basketball" | "football" | "soccer" | "hockey" | "other-sports"
@@ -210,7 +214,8 @@ const rows: Row[] = [
   { name: "Dragon Ball Super TCG: Fusion World Ultra Limit Booster (FB-04) Box", price: 150.95, brand: "Dragon Ball Super", category: "dragon-ball", set: "Fusion World Ultra Limit FB04", year: 2025, boxType: "Booster Box", stock: 0, stockVerified: true },
 ];
 
-export const products: Product[] = rows.map(build);
+export const baseProducts: Product[] = rows.map(build);
+export const products: Product[] = applyExtras(baseProducts, extraItems as unknown as Extra[]);
 
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
 export const byCategory = (c: CategorySlug) => products.filter((p) => p.category === c);
