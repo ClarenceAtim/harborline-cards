@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { products, activeCategories } from "@/lib/products";
-import { posts } from "@/lib/blog";
+import { livePosts } from "@/lib/blog-live";
 import { siteUrl } from "@/lib/config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -10,6 +10,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...statics.map((p) => ({ url: base + p, changeFrequency: "weekly" as const, priority: p === "" ? 1 : 0.5 })),
     ...activeCategories().map((c) => ({ url: base + "/shop?category=" + c.slug, changeFrequency: "weekly" as const, priority: 0.8 })),
     ...products.map((p) => ({ url: base + "/products/" + p.slug, changeFrequency: "weekly" as const, priority: 0.7 })),
-    ...posts.map((p) => ({ url: base + "/blog/" + p.slug, lastModified: new Date(p.date), changeFrequency: "monthly" as const, priority: 0.6 })),
+    ...livePosts.map((p) => ({ url: base + "/blog/" + p.slug, lastModified: new Date(p.date), changeFrequency: "monthly" as const, priority: 0.6 })),
   ];
 }

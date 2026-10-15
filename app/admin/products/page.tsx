@@ -40,7 +40,7 @@ export default async function AdminProductsPage({ searchParams }: { searchParams
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-4">
           <h1 className="font-display text-3xl font-bold">Products</h1>
-          <Link href="/admin" className="text-sm font-semibold text-harbor underline">← Orders</Link>
+          <Link href="/admin" className="text-sm font-semibold text-harbor underline">← Orders</Link><Link href="/admin/blog" className="text-sm font-semibold text-harbor underline">Blog →</Link>
         </div>
         <Link href="/admin/products/edit" className="btn btn-primary">+ Add product</Link>
       </div>

@@ -160,7 +160,7 @@ export default async function AdminPage({ searchParams }: { searchParams: Promis
   return (
     <div className="container-x py-10">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-4"><h1 className="font-display text-3xl font-bold">Orders</h1><Link href="/admin/products" className="text-sm font-semibold text-harbor underline">Products →</Link></div>
+        <div className="flex items-center gap-4"><h1 className="font-display text-3xl font-bold">Orders</h1><Link href="/admin/products" className="text-sm font-semibold text-harbor underline">Products →</Link><Link href="/admin/blog" className="text-sm font-semibold text-harbor underline">Blog →</Link></div>
         <form action={logout}>
           <button type="submit" className="btn btn-ghost">Log out</button>
         </form>

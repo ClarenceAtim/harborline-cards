@@ -1,33 +1,40 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { formatPostDate, getPost, posts, readingMinutes, sortedPosts } from "@/lib/blog";
+import { formatPostDate, readingMinutes } from "@/lib/blog";
+import { getLivePost, livePosts, liveSorted } from "@/lib/blog-live";
 import { siteUrl, store } from "@/lib/config";
 
 type Params = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return posts.map((p) => ({ slug: p.slug }));
+  return livePosts.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = getLivePost(slug);
   if (!post) return {};
   return {
     title: post.title,
     description: post.description,
     alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: { type: "article", title: post.title, description: post.description, publishedTime: post.date },
+    openGraph: {
+      type: "article",
+      title: post.title,
+      description: post.description,
+      publishedTime: post.date,
+      images: post.image ? [post.image] : undefined,
+    },
   };
 }
 
 export default async function BlogPostPage({ params }: Params) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = getLivePost(slug);
   if (!post) notFound();
 
-  const more = sortedPosts().filter((p) => p.slug !== post.slug).slice(0, 2);
+  const more = liveSorted().filter((p) => p.slug !== post.slug).slice(0, 2);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -36,6 +43,7 @@ export default async function BlogPostPage({ params }: Params) {
     description: post.description,
     datePublished: post.date,
     dateModified: post.date,
+    image: post.image ? [post.image] : undefined,
     mainEntityOfPage: `${siteUrl()}/blog/${post.slug}`,
     author: { "@type": "Organization", name: store.name },
     publisher: { "@type": "Organization", name: store.name },
@@ -56,6 +64,11 @@ export default async function BlogPostPage({ params }: Params) {
       <p className="mt-2 text-xs text-ink-faint">
         {formatPostDate(post.date)} · {readingMinutes(post)} min read
       </p>
+
+      {post.image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={post.image} alt={post.title} className="mt-6 max-h-[420px] w-full rounded-lg border border-ink/10 object-cover" />
+      ) : null}
 
       <div className="mt-6 space-y-4 text-[15px] leading-7 text-ink">
         {post.body.map((b, i) => {
