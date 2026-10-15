@@ -32,7 +32,7 @@ export default function Header() {
         <nav aria-label="Primary" className="ml-auto hidden items-center gap-5 text-sm font-semibold lg:flex">
           <Link href="/shop" className="hover:text-harbor">Shop all</Link>
           <Link href="/shop?category=pokemon" className="hover:text-harbor">Pokémon</Link>
-          <Link href="/releases" className="hover:text-harbor">Release calendar</Link>
+          <Link href="/blog" className="hover:text-harbor">Blog</Link>
         </nav>
 
         <Link href="/cart" className="relative ml-auto rounded-md border border-ink/20 px-3 py-2 text-sm font-semibold hover:border-ink/50 lg:ml-0" aria-label={`Cart, ${ready ? count : 0} items`}>
@@ -63,7 +63,7 @@ export default function Header() {
           </form>
           <div className="container-x pb-4">
             <Link href="/shop" onClick={() => setOpen(false)} className="block py-2 font-semibold">Shop all</Link>
-            <Link href="/releases" onClick={() => setOpen(false)} className="block py-2 font-semibold">Release calendar</Link>
+            <Link href="/blog" onClick={() => setOpen(false)} className="block py-2 font-semibold">Blog</Link>
             {groups.filter((g) => cats.some((c) => c.group === g)).map((g) => (
               <div key={g} className="mt-3">
                 <p className="text-xs font-bold uppercase tracking-wide text-ink-faint">{g}</p>
