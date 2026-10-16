@@ -16,8 +16,10 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 } },
   openGraph: { type: "website", siteName: store.name, title: siteTitle, description: siteDescription, locale: "en_US" },
   twitter: { card: "summary_large_image", title: siteTitle, description: siteDescription },
+  verification: {
+    google: "PXpYTcHuo3wHanH5FbUyv9046XqBjQlziP2N-IFo9y0",
+  },
 };
-
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
