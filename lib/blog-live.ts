@@ -62,7 +62,15 @@ export function textToBlocks(text: string): Block[] {
 
 export const blocksToText = (blocks: Block[]) =>
   blocks
-    .map((b) => (b.type === "h2" ? `## ${b.text}` : b.type === "ul" ? b.items.map((i) => `- ${i}`).join("\n") : b.text))
+    .map((b) =>
+      b.type === "h2"
+        ? `## ${b.text}`
+        : b.type === "ul"
+          ? b.items.map((i) => `- ${i}`).join("\n")
+          : b.type === "links"
+            ? b.items.map((i) => `- ${i.label}: ${i.href}`).join("\n")
+            : b.text,
+    )
     .join("\n\n");
 
 const rowToPost = (r: BlogRow): LivePost => ({
