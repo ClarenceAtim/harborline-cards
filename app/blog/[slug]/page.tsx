@@ -88,6 +88,19 @@ export default async function BlogPostPage({ params }: Params) {
               </ul>
             );
           }
+          if (b.type === "links") {
+            return (
+              <ul key={i} className="space-y-2">
+                {b.items.map((it, j) => (
+                  <li key={j}>
+                    <Link href={it.href} className="font-semibold text-harbor underline">
+                      {it.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            );
+          }
           return <p key={i}>{b.text}</p>;
         })}
       </div>
