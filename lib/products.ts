@@ -108,7 +108,7 @@ function build(r: Row, i: number): Product {
     availability: stock > 0 ? "in_stock" : "out_of_stock",
     featured: !!r.featured,
     specifications: { Brand: r.brand, Set: r.set, Year: String(r.year), Format: r.boxType, ...(r.specs ?? {}) },
-    seoTitle: `${r.name} | Harborline Cards`,
+    seoTitle: r.name,
     seoDescription: `Buy ${r.name}. ${r.boxType} from ${r.set}. Order request with seller-confirmed payment.`,
     verification: { name: "verified", price: "verified", stock: r.stockVerified ? "verified" : "placeholder", image: img ? "verified" : "placeholder" },
     source: SOURCE,

@@ -9,7 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...statics.map((p) => ({ url: base + p, changeFrequency: "weekly" as const, priority: p === "" ? 1 : 0.5 })),
     ...activeCategories().map((c) => ({ url: base + "/shop?category=" + c.slug, changeFrequency: "weekly" as const, priority: 0.8 })),
-    ...products.map((p) => ({ url: base + "/products/" + p.slug, changeFrequency: "weekly" as const, priority: 0.7 })),
+    ...products.map((p) => ({
+      url: base + "/products/" + p.slug,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+      ...(p.image ? { images: [base + p.image] } : {}),
+    })),
     ...livePosts.map((p) => ({ url: base + "/blog/" + p.slug, lastModified: new Date(p.date), changeFrequency: "monthly" as const, priority: 0.6 })),
   ];
 }

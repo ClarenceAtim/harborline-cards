@@ -113,7 +113,7 @@ export default async function ProductPage({ params }: { params: Params }) {
               <div key={k} className="grid grid-cols-3 gap-3 px-4 py-2"><dt className="font-semibold text-ink-soft">{k}</dt><dd className="col-span-2">{v}</dd></div>
             ))}
           </dl>
-          <p className="mt-3 text-[11px] text-ink-faint">Price verified from a public retailer listing on 2026-10-09 and may change. Stock level is a placeholder.</p>
+          <p className="mt-3 text-[11px] text-ink-faint">Prices are checked against public listings and may change before your order is confirmed. Availability is confirmed by the seller when your order request is reviewed.</p>
         </div>
       </div>
 
