@@ -291,6 +291,111 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "pokemon-card-grading-explained",
+    title: "How Pokémon Card Grading Works: PSA, BGS and CGC Explained",
+    description:
+      "Card grading turns a loose Pokémon card into an authenticated, sealed collectible with a score from 1 to 10. Here is how PSA, BGS and CGC grade, and when grading is worth it.",
+    date: "2026-11-06",
+    shopLink: { label: "Shop sealed Pokémon products", href: "/shop" },
+    body: [
+      {
+        type: "p",
+        text: "If you have spent any time in the Pokémon hobby, you have seen graded cards: a card sealed inside a clear plastic case with a label on top showing a number from 1 to 10. That number comes from a professional grading company, and it can change what a card is worth and how easy it is to sell. Here is how grading actually works, who the main companies are, and when it makes sense to grade your own cards.",
+      },
+      { type: "h2", text: "What is card grading?" },
+      {
+        type: "p",
+        text: "Grading is a service where a company checks that a card is genuine, examines its physical condition, and gives it a score. The card is then sealed in a tamper-evident plastic holder, often called a slab, with a label showing the card's name, set, and grade. The label usually includes a certification number you can look up on the grading company's website to confirm the card matches their records.",
+      },
+      {
+        type: "p",
+        text: "Collectors value graded cards for two reasons. First, the grade gives buyers and sellers a shared language for condition, so a trade or sale is less of an argument about how good a card looks. Second, the sealed holder protects the card and proves it has been checked by an independent company, which matters a lot for rare and valuable cards.",
+      },
+      { type: "h2", text: "The three main grading companies" },
+      {
+        type: "p",
+        text: "Most Pokémon cards you see graded come from one of three companies. PSA, short for Professional Sports Authenticator, is the biggest name in the hobby and the most common choice for Pokémon cards. Its 10-point scale is the one most collectors compare against, and PSA-graded cards tend to be the easiest to sell.",
+      },
+      {
+        type: "p",
+        text: "Beckett Grading Services, known as BGS, is the second major option. Beckett is known for its detailed subgrades: it scores centering, corners, edges and surface separately, then combines them into an overall grade. A Beckett 10 with perfect 10 subgrades, called a Black Label, is one of the rarest and most sought-after grades in the hobby.",
+      },
+      {
+        type: "p",
+        text: "CGC, the Certified Guaranty Company, is the third well-known grader. CGC also uses subgrades and has become popular for modern cards. Which company is best depends on what you collect and what you plan to do with the card, so it is worth checking recent sales of graded cards like yours before choosing.",
+      },
+      { type: "h2", text: "How a card is graded" },
+      {
+        type: "p",
+        text: "Graders look at four things, and a weakness in any one of them can lower the final score:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Centering: how evenly the printed image sits inside the card's borders. A card that is visibly off-center on the front or back will not earn a top grade.",
+          "Corners: sharp, clean corners score well. Even a tiny white nick on one corner can cost a point.",
+          "Edges: the sides of the card should be smooth and free of whitening, chips or rough spots.",
+          "Surface: the face of the card should be free of scratches, print lines, dents and fingerprints. Graders check the card under bright light and magnification.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Each company weighs these factors a little differently, and grading always involves some human judgment. Two copies of the same card can receive different grades, which is why experienced collectors look at a card closely before sending it in.",
+      },
+      { type: "h2", text: "What the grades mean" },
+      {
+        type: "p",
+        text: "All three companies use a scale from 1 to 10, and the names are similar across them. A 10, usually called Gem Mint, means the card is about as close to perfect as a printed card gets. A 9, or Mint, is a nearly perfect card with a tiny flaw a casual look would miss. An 8, Near Mint-Mint, is a clean card with one or two small visible flaws. Grades below that describe cards with more obvious wear, and a 1 means the card is heavily worn but still genuine and complete.",
+      },
+      {
+        type: "p",
+        text: "The jump in value between grades can be large, especially for rare cards. A 10 can be worth several times more than a 9 of the same card, while the difference between a 7 and an 8 is usually much smaller. That gap is why collectors are careful about which cards they send in.",
+      },
+      { type: "h2", text: "Should you grade your cards?" },
+      {
+        type: "p",
+        text: "Grading costs money and takes time, so it is not worth doing for every card. Fees vary by company and by the service level you choose, and turnaround times change with demand, so check the grading company's current pricing before you send anything. As a rule of thumb, grading makes the most sense when the card is likely to be worth noticeably more in a slab than raw, or when you want it authenticated and protected for the long term.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Grade it if the card is rare, valuable, or from a set collectors chase, and it looks clean under a bright light.",
+          "Grade it if you plan to sell and buyers of that card usually want a graded copy.",
+          "Keep it raw if the card is common or heavily played — the grading fee may cost more than the card is worth.",
+          "Keep it raw if you enjoy handling and displaying the card yourself; a slab is great for protection but not for flipping through a binder.",
+        ],
+      },
+      { type: "h2", text: "How to prepare a card for grading" },
+      {
+        type: "p",
+        text: "Handle the card as little as possible, with clean, dry hands. Slide it into a penny sleeve, then into a semi-rigid card holder — the kind grading companies recommend — and keep it somewhere safe until you ship it. Check the card under a bright light first: look for edge whitening, surface scratches and print lines, and check the centering on both sides. If you spot a flaw, it is better to know before you pay the fee than after.",
+      },
+      {
+        type: "p",
+        text: "Follow the grading company's submission instructions exactly, including how to fill in the form and how to pack the cards for shipping. Insure the package for the value of the cards inside, and keep a record of the certification numbers you receive so you can track the order.",
+      },
+      { type: "h2", text: "Buying graded cards" },
+      {
+        type: "p",
+        text: "When you buy a graded card, check the certification number on the grading company's website to confirm it matches the card in the holder. Look at the slab itself: it should be sealed cleanly, with no cracks or signs it has been opened. Compare the price with recent sales of the same card in the same grade, and be careful with deals that seem far below the usual price — they are a common sign of a fake slab or a switched label.",
+      },
+      {
+        type: "links",
+        items: [
+          { label: "How to Store Sealed Trading Card Boxes Safely", href: "/blog/how-to-store-sealed-trading-card-boxes" },
+          { label: "Booster Box vs Elite Trainer Box: the full comparison", href: "/blog/pokemon-booster-box-vs-elite-trainer-box" },
+          { label: "Pokémon Scarlet & Violet 151 Ultra Premium Collection Box", href: "/products/pokemon-scarlet-and-violet-151-ultra-premium-collection-box" },
+          { label: "Shop sealed Pokémon products", href: "/shop" },
+        ],
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Grading does not make a card more valuable on its own — it puts a trusted number on the condition the card already has. For collectors in the US and Canada, a graded card is easier to buy, sell and trade with confidence, and a high grade on a rare card can be worth real money. Start by grading only your cleanest, most valuable cards, learn what graders look for, and let the rest of your collection stay raw and enjoyed. The hobby is supposed to be fun, and a slab should never get in the way of that.",
+      },
+    ],
+  },
 ];
 
 export const sortedPosts = () => [...posts].sort((a, b) => b.date.localeCompare(a.date));
