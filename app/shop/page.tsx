@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { activeCategories, facets, categoryLabel } from "@/lib/products";
+import { activeCategories, facets, categoryLabel, categoryHref } from "@/lib/products";
 import { filterProducts, type ShopParams } from "@/lib/shop";
 import ProductCard from "@/components/ProductCard";
 import { categorySeo } from "@/lib/seo";
@@ -12,7 +12,7 @@ export async function generateMetadata({ searchParams }: { searchParams: Promise
   // Any filter other than category (search, price, sort, page...) is kept out of search results.
   const filtered = Object.keys(sp).some((k) => k !== "category" && sp[k]);
   const base: Metadata = seo
-    ? { title: seo.title, description: seo.description, alternates: { canonical: "/shop?category=" + cat } }
+    ? { title: seo.title, description: seo.description, alternates: { canonical: categoryHref(cat) } }
     : {
         title: "Shop Sealed Sports Cards & Trading Card Game Boxes",
         description: "Browse hobby boxes, blasters, Pokémon booster boxes, elite trainer boxes, tins and Magic: The Gathering, One Piece, Yu-Gi-Oh! and Dragon Ball products.",

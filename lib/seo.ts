@@ -1,4 +1,6 @@
 // Keywords, titles and descriptions used for SEO. Edit freely.
+import type { Metadata } from "next";
+
 export const siteTitle = "Harborline Cards | Sealed Sports Cards, Pokémon & Trading Card Game Boxes";
 
 export const siteDescription =
@@ -17,17 +19,17 @@ export const categorySeo: Record<string, { title: string; description: string; i
   baseball: {
     title: "Baseball Cards: Hobby Boxes, Blasters & Mega Boxes",
     description: "Shop sealed baseball card boxes: Topps Chrome, Bowman Chrome, Panini Prizm and Select hobby boxes, blasters and mega boxes.",
-    intro: "Browse sealed baseball cards: hobby boxes, blaster boxes and mega boxes from Topps, Bowman, Panini and Leaf. Filter by set, year and price to find the box you want.",
+    intro: "Browse sealed baseball cards: hobby boxes, blaster boxes and mega boxes from Topps, Bowman, Panini and Leaf.",
   },
   basketball: {
     title: "Basketball Cards: Panini Hobby Boxes",
     description: "Shop sealed basketball card hobby boxes including Panini Noir and Panini Origins.",
-    intro: "Browse sealed basketball cards, including Panini hobby boxes. Use the filters to compare sets, years and prices.",
+    intro: "Browse sealed basketball cards, including Panini hobby boxes.",
   },
   football: {
     title: "Football Cards: Hobby Boxes & Sealed Boxes",
     description: "Shop sealed football card boxes: Panini Prizm, Select, Contenders, Gold Standard, Leaf Trinity and ONIT.",
-    intro: "Browse sealed football cards from Panini, Leaf and ONIT, including hobby boxes and specialty boxes. Filter by year, set and price.",
+    intro: "Browse sealed football cards from Panini, Leaf and ONIT, including hobby boxes and specialty boxes.",
   },
   soccer: {
     title: "Soccer Cards: Topps Chrome Hobby Boxes",
@@ -75,3 +77,15 @@ export const categorySeo: Record<string, { title: string; description: string; i
     intro: "Browse other sealed trading card games and entertainment card products.",
   },
 };
+
+// Metadata for a category's own page (app/<slug>/page.tsx): same title/description as
+// the old /shop?category= view, canonical to the real page.
+export function categoryPageMetadata(slug: string): Metadata {
+  const seo = categorySeo[slug];
+  if (!seo) return {};
+  return {
+    title: seo.title,
+    description: seo.description,
+    alternates: { canonical: `/${slug}` },
+  };
+}

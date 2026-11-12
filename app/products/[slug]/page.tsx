@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { products, getProduct, categoryLabel } from "@/lib/products";
+import { products, getProduct, categoryLabel, categoryHref } from "@/lib/products";
 import { formatPrice } from "@/lib/format";
 import { siteUrl } from "@/lib/config";
 import ProductImage from "@/components/ProductImage";
@@ -68,7 +68,7 @@ export default async function ProductPage({ params }: { params: Params }) {
       <nav aria-label="Breadcrumb" className="text-xs text-ink-faint">
         <Link href="/" className="hover:underline">Home</Link> /{" "}
         <Link href="/shop" className="hover:underline">Shop</Link> /{" "}
-        <Link href={`/shop?category=${p.category}`} className="hover:underline">{categoryLabel(p.category)}</Link> /{" "}
+        <Link href={categoryHref(p.category)} className="hover:underline">{categoryLabel(p.category)}</Link> /{" "}
         <span className="text-ink-soft">{p.name}</span>
       </nav>
 

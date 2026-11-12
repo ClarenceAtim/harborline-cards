@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { store } from "@/lib/config";
+import { categoryHref } from "@/lib/products";
 import ContactNumber from "./ContactNumber";
 
 export default function Footer() {
@@ -15,9 +16,9 @@ export default function Footer() {
           </p>
         </div>
         <FooterCol title="Shop" links={[
-          ["All products", "/shop"], ["Baseball cards", "/shop?category=baseball"], ["Basketball cards", "/shop?category=basketball"],
-          ["Football cards", "/shop?category=football"], ["Soccer cards", "/shop?category=soccer"], ["Hockey cards", "/shop?category=hockey"],
-          ["Pokémon cards", "/shop?category=pokemon"], ["Magic: The Gathering", "/shop?category=magic"], ["One Piece", "/shop?category=one-piece"],
+          ["All products", "/shop"], ["Baseball cards", categoryHref("baseball")], ["Basketball cards", categoryHref("basketball")],
+          ["Football cards", categoryHref("football")], ["Soccer cards", "/shop?category=soccer"], ["Hockey cards", "/shop?category=hockey"],
+          ["Pokémon cards", categoryHref("pokemon")], ["Magic: The Gathering", "/shop?category=magic"], ["One Piece", categoryHref("one-piece")],
           ["Yu-Gi-Oh!", "/shop?category=yu-gi-oh"], ["Dragon Ball", "/shop?category=dragon-ball"],
         ]} />
         <FooterCol title="Company" links={[["About", "/about"], ["Contact", "/contact"]]} />
