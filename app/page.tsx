@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { products, byCategory, activeCategories } from "@/lib/products";
+import { products, byCategory, activeCategories, categoryHref } from "@/lib/products";
 import ProductRow from "@/components/ProductRow";
 import { siteTitle, siteDescription } from "@/lib/seo";
 
@@ -25,14 +25,14 @@ export default function Home() {
             <p className="mt-4 max-w-md text-white/80">Shop hobby boxes, blaster boxes, booster boxes, elite trainer boxes and collection boxes across baseball, basketball, football, soccer, hockey, Pokémon, Magic: The Gathering, One Piece, Yu-Gi-Oh! and Dragon Ball.</p>
             <div className="mt-7 flex flex-wrap gap-3">
               <Link href="/shop" className="btn-accent">Shop all products</Link>
-              <Link href="/shop?category=pokemon" className="btn border border-white/40 text-white hover:bg-white/10">Pokémon</Link>
+              <Link href={categoryHref("pokemon")} className="btn border border-white/40 text-white hover:bg-white/10">Pokémon</Link>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3 self-center">
             {[
               ["Baseball", "baseball"], ["Basketball", "basketball"], ["Football", "football"], ["Pokémon", "pokemon"],
             ].map(([label, slug]) => (
-              <Link key={slug} href={`/shop?category=${slug}`} className="rounded-lg border border-white/20 bg-white/10 p-5 text-lg font-semibold transition hover:bg-white/20">
+              <Link key={slug} href={categoryHref(slug)} className="rounded-lg border border-white/20 bg-white/10 p-5 text-lg font-semibold transition hover:bg-white/20">
                 {label}
                 <span className="mt-1 block text-xs font-normal text-white/70">{byCategory(slug as any).length} products →</span>
               </Link>
@@ -50,7 +50,7 @@ export default function Home() {
               <h3 className="font-semibold text-harbor">{g}</h3>
               <ul className="mt-3 grid grid-cols-2 gap-x-3 gap-y-1.5 text-sm">
                 {activeCategories().filter((c) => c.group === g).map((c) => (
-                  <li key={c.slug}><Link href={`/shop?category=${c.slug}`} className="hover:text-harbor hover:underline">{c.label}</Link></li>
+                  <li key={c.slug}><Link href={categoryHref(c.slug)} className="hover:text-harbor hover:underline">{c.label}</Link></li>
                 ))}
               </ul>
             </div>
@@ -60,17 +60,17 @@ export default function Home() {
 
       <ProductRow id="featured" title="Featured products" subtitle="Staff-picked sealed product" href="/shop" items={featured} />
       <ProductRow id="new" title="New releases" subtitle="2026 products" href="/shop?sort=newest" items={newReleases} />
-      <ProductRow id="baseball" title="Baseball" href="/shop?category=baseball" items={byCategory("baseball").slice(0, 5)} />
-      <ProductRow id="basketball" title="Basketball" href="/shop?category=basketball" items={byCategory("basketball").slice(0, 5)} />
-      <ProductRow id="football" title="Football" href="/shop?category=football" items={byCategory("football").slice(0, 5)} />
+      <ProductRow id="baseball" title="Baseball" href={categoryHref("baseball")} items={byCategory("baseball").slice(0, 5)} />
+      <ProductRow id="basketball" title="Basketball" href={categoryHref("basketball")} items={byCategory("basketball").slice(0, 5)} />
+      <ProductRow id="football" title="Football" href={categoryHref("football")} items={byCategory("football").slice(0, 5)} />
 
       <div className="bg-harbor-light/60">
-        <ProductRow id="pokemon" title="Pokémon" subtitle="Booster boxes, packs, tins and collection boxes" href="/shop?category=pokemon" items={byCategory("pokemon").slice(0, 10)} />
+        <ProductRow id="pokemon" title="Pokémon" subtitle="Booster boxes, packs, tins and collection boxes" href={categoryHref("pokemon")} items={byCategory("pokemon").slice(0, 10)} />
       </div>
 
       <ProductRow id="magic" title="Magic: The Gathering" href="/shop?category=magic" items={byCategory("magic")} />
       <ProductRow id="soccer" title="Soccer" href="/shop?category=soccer" items={byCategory("soccer")} />
-      <ProductRow id="onepiece" title="One Piece" href="/shop?category=one-piece" items={byCategory("one-piece")} />
+      <ProductRow id="onepiece" title="One Piece" href={categoryHref("one-piece")} items={byCategory("one-piece")} />
       <ProductRow id="dbs" title="Dragon Ball" href="/shop?category=dragon-ball" items={byCategory("dragon-ball")} />
       <ProductRow id="yugioh" title="Yu-Gi-Oh!" href="/shop?category=yu-gi-oh" items={byCategory("yu-gi-oh")} />
       <ProductRow id="sealed" title="Popular sealed products" href="/shop?sort=price-desc" items={popularSealed} />
@@ -89,7 +89,7 @@ export default function Home() {
             <Link className="text-harbor underline" href="/shop?category=pokemon&boxType=Elite%20Trainer%20Box">Pokémon elite trainer boxes</Link>,{" "}
             <Link className="text-harbor underline" href="/shop?category=baseball&boxType=Hobby%20Box">baseball hobby boxes</Link>,{" "}
             <Link className="text-harbor underline" href="/shop?category=football&boxType=Hobby%20Box">football hobby boxes</Link>,{" "}
-            <Link className="text-harbor underline" href="/shop?category=basketball">basketball cards</Link> and{" "}
+            <Link className="text-harbor underline" href={categoryHref("basketball")}>basketball cards</Link> and{" "}
             <Link className="text-harbor underline" href="/shop?category=soccer">soccer cards</Link>.
           </p>
           <p>Questions about an order? Call <a className="font-semibold text-harbor underline" href={"tel:9173231461"}>9173231461</a>.</p>
