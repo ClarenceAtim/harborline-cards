@@ -143,7 +143,7 @@ export const posts: Post[] = [
     description:
       "Booster boxes and Elite Trainer Boxes are the most popular sealed Pokémon TCG products. Here is what each one is and how to pick the right one.",
     date: "2026-11-02",
-    shopLink: { label: "Shop sealed Pokémon TCG products", href: "/shop?category=pokemon" },
+    shopLink: { label: "Shop sealed Pokémon TCG products", href: "/pokemon" },
     body: [
       {
         type: "p",
@@ -204,7 +204,7 @@ export const posts: Post[] = [
           { label: "Pokémon Mega Evolution Elite Trainer Box", href: "/products/pokemon-mega-evolution-elite-trainer-box" },
           { label: "Pokémon Mega Evolution Phantasmal Flames Booster Bundle Box", href: "/products/pokemon-mega-evolution-phantasmal-flames-booster-bundle-box" },
           { label: "Pokémon Scarlet & Violet Destined Rivals Booster Box", href: "/products/pokemon-scarlet-and-violet-destined-rivals-booster-box" },
-          { label: "Browse all sealed Pokémon TCG products", href: "/shop?category=pokemon" },
+          { label: "Browse all sealed Pokémon TCG products", href: "/pokemon" },
         ],
       },
       { type: "h2", text: "Why buy sealed — and keep it sealed" },
@@ -225,7 +225,7 @@ export const posts: Post[] = [
     description:
       "New to the Pokémon TCG? This beginner's guide covers sealed products, choosing a set, budgeting, storage and safe buying for US and Canadian collectors.",
     date: "2026-11-02",
-    shopLink: { label: "Browse sealed Pokémon products", href: "/shop?category=pokemon" },
+    shopLink: { label: "Browse sealed Pokémon products", href: "/pokemon" },
     body: [
       {
         type: "p",
