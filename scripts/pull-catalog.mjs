@@ -65,6 +65,7 @@ try {
         stock: r.stock,
         featured: r.featured,
         image: r.image_url,
+        updatedAt: r.updated_at ?? r.created_at,
       }),
     );
     writeFileSync(OUT, JSON.stringify(extras, null, 2) + "\n");
