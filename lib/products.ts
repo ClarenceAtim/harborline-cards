@@ -14,6 +14,9 @@
 //    authorised-retailer images you have permission to use), then set imageStatus: "exact".
 //  - description: generic, built from the name/set/format. Only the 30th Celebration box carries
 //    page-specific contents (foil Eevee card, 2 packs, plastic coin) from the reference listing.
+//  - updated: the date a product row was last edited (YYYY-MM-DD), used for the sitemap lastmod.
+//    Rows without one use CATALOG_LAST_EDITED below. When you change a row, add/update its
+//    `updated` date so search engines see the real edit date.
 
 import { slugify } from "./format";
 import generatedImages from "./images.generated.json";
@@ -46,6 +49,11 @@ export const categories: { slug: CategorySlug; label: string; group: "Sports" | 
 // Only categories that actually contain products (used for menus, filters and tiles).
 export const activeCategories = () => categories.filter((c) => products.some((p) => p.category === c.slug));
 
+// Categories with their own real page (app/<slug>/page.tsx). Every other category still
+// filters the shop page (/shop?category=<slug>).
+export const categoryPages: CategorySlug[] = ["pokemon", "one-piece", "baseball", "football", "basketball"];
+export const categoryHref = (slug: string) => (categoryPages as string[]).includes(slug) ? `/${slug}` : `/shop?category=${slug}`;
+
 export const categoryLabel = (slug: string) => categories.find((c) => c.slug === slug)?.label ?? slug;
 
 export type Product = {
@@ -69,6 +77,7 @@ export type Product = {
   specifications: Record<string, string>;
   seoTitle: string;
   seoDescription: string;
+  updated: string; // YYYY-MM-DD, last edited — used for the sitemap lastmod
   verification: { name: "verified"; price: "verified"; stock: "placeholder" | "verified"; image: "placeholder" | "verified" };
   source: string;
 };
@@ -76,10 +85,16 @@ export type Product = {
 const SOURCE = "midwestcards.com public listing, retrieved 2026-10-09";
 const DEFAULT_STOCK = 10; // PLACEHOLDER
 
+// Date the catalog rows were last edited: every row last changed in the 2026-10-12 catalog
+// commit, per git history (later commits touched only the build logic, not the rows).
+// A row's own `updated` field overrides this when the row is edited.
+export const CATALOG_LAST_EDITED = "2026-10-12";
+
 type Row = {
   name: string; price: number; brand: string; category: CategorySlug;
   set: string; year: number; boxType: string; featured?: boolean; stock?: number;
   description?: string; specs?: Record<string, string>; stockVerified?: boolean;
+  updated?: string; // YYYY-MM-DD, last edited; update it when you change this row
 };
 
 function build(r: Row, i: number): Product {
@@ -110,6 +125,7 @@ function build(r: Row, i: number): Product {
     specifications: { Brand: r.brand, Set: r.set, Year: String(r.year), Format: r.boxType, ...(r.specs ?? {}) },
     seoTitle: r.name,
     seoDescription: `Buy ${r.name}. ${r.boxType} from ${r.set}. Order request with seller-confirmed payment.`,
+    updated: r.updated ?? CATALOG_LAST_EDITED,
     verification: { name: "verified", price: "verified", stock: r.stockVerified ? "verified" : "placeholder", image: img ? "verified" : "placeholder" },
     source: SOURCE,
   };
