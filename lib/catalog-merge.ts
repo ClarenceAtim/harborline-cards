@@ -18,6 +18,7 @@ export type Extra = {
   stock?: number;
   featured?: boolean;
   image?: string; // full public URL
+  updatedAt?: string; // ISO timestamp of the seller's edit (Supabase updated_at / created_at)
 };
 
 const KEYS: (keyof Extra)[] = ["slug", "isNew", "hidden", "name", "brand", "category", "set", "year", "boxType", "description", "price", "stock", "featured", "image"];
@@ -54,6 +55,9 @@ function newProduct(x: Extra, n: number): Product {
     specifications: { Brand: brand, Set: set, Year: String(year), Format: boxType },
     seoTitle: `${name} | Harborline Cards`,
     seoDescription: `Buy ${name}. ${boxType} from ${set}. Order request with seller-confirmed payment.`,
+    // Seller-added products carry their edit date when the catalog pull provides one;
+    // otherwise fall back to the catalog's known-as-of date (see CATALOG_LAST_EDITED in lib/products.ts).
+    updated: x.updatedAt ? x.updatedAt.slice(0, 10) : "2026-10-12",
     verification: { name: "verified", price: "verified", stock: "verified", image: x.image ? "verified" : "placeholder" },
     source: "Added by the seller",
   };
@@ -97,6 +101,7 @@ export function applyExtras(base: Product[], extras: Extra[], opts: { keepHidden
       p.imageStatus = "source-photo";
       p.verification.image = "verified";
     }
+    if (x.updatedAt) p.updated = x.updatedAt.slice(0, 10);
   }
   return out;
 }
