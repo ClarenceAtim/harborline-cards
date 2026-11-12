@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "./CartProvider";
-import { activeCategories } from "@/lib/products";
+import { activeCategories, categoryHref } from "@/lib/products";
 import { store } from "@/lib/config";
 
 const groups = ["Sports", "Trading card games", "More"] as const;
@@ -31,7 +31,7 @@ export default function Header() {
 
         <nav aria-label="Primary" className="ml-auto hidden items-center gap-5 text-sm font-semibold lg:flex">
           <Link href="/shop" className="hover:text-harbor">Shop all</Link>
-          <Link href="/shop?category=pokemon" className="hover:text-harbor">Pokémon</Link>
+          <Link href={categoryHref("pokemon")} className="hover:text-harbor">Pokémon</Link>
           <Link href="/blog" className="hover:text-harbor">Blog</Link>
         </nav>
 
@@ -48,7 +48,7 @@ export default function Header() {
         <ul className="container-x flex gap-5 overflow-x-auto py-2 text-sm text-ink-soft">
           {cats.map((c) => (
             <li key={c.slug} className="shrink-0">
-              <Link href={`/shop?category=${c.slug}`} className="hover:text-harbor">{c.label}</Link>
+              <Link href={categoryHref(c.slug)} className="hover:text-harbor">{c.label}</Link>
             </li>
           ))}
         </ul>
@@ -68,7 +68,7 @@ export default function Header() {
               <div key={g} className="mt-3">
                 <p className="text-xs font-bold uppercase tracking-wide text-ink-faint">{g}</p>
                 {cats.filter((c) => c.group === g).map((c) => (
-                  <Link key={c.slug} href={`/shop?category=${c.slug}`} onClick={() => setOpen(false)} className="block py-1.5 text-sm">{c.label}</Link>
+                  <Link key={c.slug} href={categoryHref(c.slug)} onClick={() => setOpen(false)} className="block py-1.5 text-sm">{c.label}</Link>
                 ))}
               </div>
             ))}
