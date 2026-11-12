@@ -395,7 +395,7 @@ export const posts: Post[] = [
         text: "Grading does not make a card more valuable on its own — it puts a trusted number on the condition the card already has. For collectors in the US and Canada, a graded card is easier to buy, sell and trade with confidence, and a high grade on a rare card can be worth real money. Start by grading only your cleanest, most valuable cards, learn what graders look for, and let the rest of your collection stay raw and enjoyed. The hobby is supposed to be fun, and a slab should never get in the way of that.",
       },
     ],
-  },,
+  },
   {
     slug: "sealed-vs-singles-pokemon-cards",
     title: "Sealed vs Singles: Should You Buy Sealed Pokémon Cards or Single Cards?",
@@ -490,3 +490,4 @@ export const readingMinutes = (p: Post) => {
 
 export const formatPostDate = (iso: string) =>
   new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" }).format(new Date(`${iso}T00:00:00Z`));
+
