@@ -17,7 +17,10 @@ export const metadata: Metadata = {
   openGraph: { type: "website", siteName: store.name, title: siteTitle, description: siteDescription, locale: "en_US" },
   twitter: { card: "summary_large_image", title: siteTitle, description: siteDescription },
   verification: {
-    google: "PXpYTcHuo3wHanH5FbUyv9046XqBjQlziP2N-IFo9y0",
+    google: [
+      "PXpYTcHuo3wHanH5FbUyv9046XqBjQlziP2N-IFo9y0",
+      "ULaIN3SOjKDsBzJGyDBIVrhpKmQN1GLMQ3CcZGWCs4s",
+    ],
   },
 };
 const structuredData = {
