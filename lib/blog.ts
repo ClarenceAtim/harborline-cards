@@ -475,6 +475,77 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-to-spot-fake-pokemon-cards",
+    title: "How to Spot Fake Pokémon Cards: A Buyer's Guide",
+    description:
+      "Fake Pokémon cards are everywhere online. Learn the quick checks — print, back, light test and sealed packaging — that protect your collection and your money.",
+    date: "2026-11-18",
+    shopLink: { label: "Shop sealed Pokémon products", href: "/pokemon" },
+    body: [
+      {
+        type: "p",
+        text: "Pokémon cards are more popular than ever, and wherever there is demand, counterfeits follow. Fake cards show up in online marketplaces, auction listings, flea markets and even sealed-looking packs, and some of them look convincing at first glance. The good news is that most fakes give themselves away once you know what to check. Whether you are buying your first cards or hunting a rare pull for your binder, these checks will help you spot a fake before your money is gone.",
+      },
+      { type: "h2", text: "Why fake Pokémon cards are so common" },
+      {
+        type: "p",
+        text: "Pokémon is one of the best-selling trading card games in the world, and rare cards can sell for far more than the price of a pack. That gap is what counterfeiters chase. They print cards that look like real ones and sell them to buyers who do not know the difference, often at prices that seem like a bargain. The problem has grown with online selling: a listing photo can hide a lot, and a seller on the other side of the country is hard to hold accountable. Knowing the checks below matters more than ever, especially when you buy from a seller you have never used before.",
+      },
+      { type: "h2", text: "Start with the card in your hand" },
+      {
+        type: "ul",
+        items: [
+          "Colors that look off. Real Pokémon cards have rich, even colors. Fakes often look washed out, too dark, or slightly blurry, especially in the artwork and the energy symbols.",
+          "Rough or glossy texture. Genuine cards have a smooth, slightly matte finish with a consistent feel. Many fakes feel too glossy, too rough, or plasticky.",
+          "Borders that are uneven. The yellow border on a real card is even all the way around. Fakes often have borders that are thicker on one side, or a border color that is the wrong shade of yellow.",
+          "Holofoil that looks wrong. Real holofoil has a clean, even shine that shifts as you tilt the card. Fake holofoil often looks patchy, rainbow-smeared, or printed on instead of foiled.",
+          "A card that feels wrong. Real cards have a specific thickness and stiffness. Fakes are often thinner, floppier, or noticeably lighter, and some are printed on the wrong kind of card stock entirely.",
+          "The back of the card. Flip it over. The blue Poké Ball design on a real card is a deep, consistent blue with crisp edges. On fakes the blue is often too light, too dark, or slightly fuzzy, and the border can look off-center.",
+        ],
+      },
+      { type: "h2", text: "The light test" },
+      {
+        type: "p",
+        text: "Hold the card up to a bright light or a phone flashlight. A real Pokémon card is printed on layered card stock with a dark middle layer, so very little light passes through. Many fakes are printed on a single thin layer, so light shines through easily and the artwork shows through from the other side. This is not a perfect test on its own — some modern cards and special prints behave differently — but a card that glows like tissue paper is almost certainly fake. Compare against a card you know is real, from the same era if you can.",
+      },
+      { type: "h2", text: "Check the text, numbers and symbols" },
+      {
+        type: "p",
+        text: "Counterfeiters get the big picture right and the small details wrong. Read the card closely: fake cards often have spelling mistakes, odd wording in the attack text, or a font that is slightly different from real cards of the same set. Check the set symbol and the card number at the bottom — they should match the real card from that set, and the copyright line should read correctly, with the right year and the names of Nintendo, Creatures and GAME FREAK. If a card claims to be from a set but the symbol, number or copyright year does not line up, walk away. A quick search for the real card online will show you what the genuine version looks like.",
+      },
+      { type: "h2", text: "Fake sealed product: packs and boxes" },
+      {
+        type: "p",
+        text: "Fakes are not limited to single cards. Counterfeit booster packs and boxes exist too, and they are harder to check because you cannot see the cards inside. Watch for packaging that looks slightly off: blurry printing, colors that do not match the real product, a logo that is stretched or misspelled, or shrink wrap that is loose, wrinkled or resealed. Real packs have a clean, tight seal and a crisp crimp at the top and bottom. Be especially careful with loose packs sold individually — they are the easiest to tamper with, and a pack that has been opened and resealed will never contain the rare card it promises. If a deal on sealed product seems far cheaper than every other seller, that is a warning sign, not a bargain.",
+      },
+      { type: "h2", text: "How to buy safely online" },
+      {
+        type: "ul",
+        items: [
+          "Buy from sellers with a track record. Check reviews, feedback and how long the seller has been trading before you order.",
+          "Ask for clear photos. A trustworthy seller will show the front and back of the exact card you are buying, not a stock image.",
+          "Compare the price. If a rare card is listed for a fraction of what every other seller charges, assume something is wrong.",
+          "Use payment methods with buyer protection, and keep your order messages and photos in case you need to dispute a sale.",
+          "When in doubt, buy sealed product from a reputable retailer rather than loose packs from an unknown seller.",
+        ],
+      },
+      {
+        type: "links",
+        items: [
+          { label: "How Pokémon Card Grading Works: PSA, BGS and CGC Explained", href: "/blog/pokemon-card-grading-explained" },
+          { label: "Buying Sealed Trading Cards Online: A Simple Checklist", href: "/blog/buying-sealed-cards-online-checklist" },
+          { label: "How to Start Collecting Pokémon Cards in 2026", href: "/blog/how-to-start-collecting-pokemon-cards" },
+          { label: "Browse sealed Pokémon products", href: "/pokemon" },
+        ],
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Most fake Pokémon cards fail more than one of these checks, so you do not need to be an expert to protect yourself — you just need to slow down and look. Compare the card with one you know is real, check the print, the back, the light and the text, and buy from sellers you trust. The few minutes those checks take are worth far more than the money a fake card costs. Collecting is supposed to be fun, and nothing spoils it faster than discovering a card you were proud of was never real.",
+      },
+    ],
+  },
 ];
 
 export const sortedPosts = () => [...posts].sort((a, b) => b.date.localeCompare(a.date));
