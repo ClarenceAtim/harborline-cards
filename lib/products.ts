@@ -95,6 +95,7 @@ type Row = {
   set: string; year: number; boxType: string; featured?: boolean; stock?: number;
   description?: string; specs?: Record<string, string>; stockVerified?: boolean;
   updated?: string; // YYYY-MM-DD, last edited; update it when you change this row
+  source?: string; // overrides SOURCE for products priced from other retailers
 };
 
 function build(r: Row, i: number): Product {
@@ -127,7 +128,7 @@ function build(r: Row, i: number): Product {
     seoDescription: `Buy ${r.name}. ${r.boxType} from ${r.set}. Order request with seller-confirmed payment.`,
     updated: r.updated ?? CATALOG_LAST_EDITED,
     verification: { name: "verified", price: "verified", stock: r.stockVerified ? "verified" : "placeholder", image: img ? "verified" : "placeholder" },
-    source: SOURCE,
+    source: r.source ?? SOURCE,
   };
 }
 
@@ -207,6 +208,31 @@ const rows: Row[] = [
   { name: "Pokémon Sword & Shield Lost Origin Booster Pack", price: 28.95, brand: "Pokémon", category: "pokemon", set: "Lost Origin", year: 2022, boxType: "Booster Pack" },
   { name: "Pokémon Scarlet & Violet Prismatic Evolutions Poster Collection 6 Box Case", price: 299.95, brand: "Pokémon", category: "pokemon", set: "Prismatic Evolutions", year: 2025, boxType: "Collection Case" },
   { name: "Pokémon Mega Evolution Pitch Black Build & Battle Box", price: 74.95, brand: "Pokémon", category: "pokemon", set: "Pitch Black", year: 2026, boxType: "Build & Battle Box" },
+  // ---------- European editions (added 2026-11-21) ----------
+  // Priced from European retailers (EUR market price x 1.0785, rounded to .95),
+  // matching the pattern of the French/German/Spanish editions added via the admin.
+  {
+    name: "Pokémon Mega-Entwicklung Display 36 Booster (German Edition)", price: 204.95, brand: "Pokémon", category: "pokemon",
+    set: "Mega-Entwicklung", year: 2025, boxType: "Booster Display",
+    description: "German edition. Sealed display box with 36 Mega-Entwicklung booster packs. Check the manufacturer's checklist for exact contents and odds before purchasing.",
+    specs: { Edition: "German", EAN: "0196214115958" },
+    source: "billiger.de / Kaufland.de public listings, retrieved 2026-11-21",
+    updated: "2026-11-21",
+  },
+  {
+    name: "Pokémon Escarlata y Púrpura – 151 Colección Ultra Premium Mew-ex (Spanish Edition)", price: 969.95, brand: "Pokémon", category: "pokemon",
+    set: "Escarlata y Púrpura – 151", year: 2023, boxType: "Colección Ultra Premium",
+    description: "Spanish edition. Sealed Ultra Premium Collection with 16 booster packs and a metal Mew ex promo card. Check the manufacturer's checklist for exact contents and odds before purchasing.",
+    source: "TCGFusion public listing, retrieved 2026-11-21",
+    updated: "2026-11-21",
+  },
+  {
+    name: "Pokémon Escarlata y Púrpura – Evoluciones Prismáticas Colección Súper Premium (Spanish Edition)", price: 279.95, brand: "Pokémon", category: "pokemon",
+    set: "Escarlata y Púrpura – Evoluciones Prismáticas", year: 2025, boxType: "Colección Súper Premium",
+    description: "Spanish edition. Sealed Super Premium Collection with 15 booster packs, an Eevee ex promo card, deck box, playmat and 65 card sleeves. Check the manufacturer's checklist for exact contents and odds before purchasing.",
+    source: "manavortex.es public listing, retrieved 2026-11-21",
+    updated: "2026-11-21",
+  },
   // ---------- Magic: The Gathering ----------
   { name: "Magic: The Gathering Reality Fracture Commander Deck 4 Deck Case", price: 224.95, brand: "Magic", category: "magic", set: "Reality Fracture", year: 2026, boxType: "Commander Deck Case" },
   { name: "Magic: The Gathering Reality Fracture Bundle Box", price: 59.95, brand: "Magic", category: "magic", set: "Reality Fracture", year: 2026, boxType: "Bundle Box" },
