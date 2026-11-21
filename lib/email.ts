@@ -1,6 +1,6 @@
 // Server-only email via the Resend REST API (free tier compatible). No SDK needed.
 
-import { formatCents } from "./format";
+import { formatCents, nonzeroTotals } from "./format";
 import { paymentMethods, store } from "./config";
 import type { StoredOrder } from "./orders";
 
@@ -33,14 +33,17 @@ const pmLabel = (id: string) => paymentMethods.find((m) => m.id === id)?.label ?
 
 function itemsTable(o: StoredOrder) {
   const rows = o.items
-    .map((i) => `<tr><td style="padding:6px 8px;border-bottom:1px solid #eee">${esc(i.name)}</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:center">${i.qty}</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right">${formatCents(i.unitCents)}</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right">${formatCents(i.lineCents)}</td></tr>`)
+    .map((i) => `<tr><td style="padding:6px 8px;border-bottom:1px solid #eee">${esc(i.name)}</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:center">${i.qty}</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right">${formatCents(i.unitCents, i.currency)}</td><td style="padding:6px 8px;border-bottom:1px solid #eee;text-align:right">${formatCents(i.lineCents, i.currency)}</td></tr>`)
     .join("");
-  return `<table style="border-collapse:collapse;width:100%;font-size:14px"><thead><tr><th align="left" style="padding:6px 8px">Item</th><th style="padding:6px 8px">Qty</th><th align="right" style="padding:6px 8px">Price</th><th align="right" style="padding:6px 8px">Line</th></tr></thead><tbody>${rows}</tbody></table><p style="text-align:right;font-size:16px"><strong>Total: ${formatCents(o.totalCents)}</strong> (shipping to be confirmed)</p>`;
+  const totalLines = nonzeroTotals(o.totals, true)
+    .map(({ currency, label }) => `<strong>Total (${currency}): ${label}</strong>`)
+    .join("<br>");
+  return `<table style="border-collapse:collapse;width:100%;font-size:14px"><thead><tr><th align="left" style="padding:6px 8px">Item</th><th style="padding:6px 8px">Qty</th><th align="right" style="padding:6px 8px">Price</th><th align="right" style="padding:6px 8px">Line</th></tr></thead><tbody>${rows}</tbody></table><p style="text-align:right;font-size:16px">${totalLines} (shipping to be confirmed)</p>`;
 }
 
 const itemsText = (o: StoredOrder) =>
-  o.items.map((i) => `- ${i.name} x${i.qty} @ ${formatCents(i.unitCents)} = ${formatCents(i.lineCents)}`).join("\n") +
-  `\nTotal: ${formatCents(o.totalCents)} (shipping to be confirmed)`;
+  o.items.map((i) => `- ${i.name} x${i.qty} @ ${formatCents(i.unitCents, i.currency)} = ${formatCents(i.lineCents, i.currency)}`).join("\n") +
+  `\n${nonzeroTotals(o.totals, true).map(({ currency, label }) => `Total (${currency}): ${label}`).join("\n")} (shipping to be confirmed)`;
 
 export function sendSellerEmail(o: StoredOrder): Promise<SendResult> {
   const to = process.env.SELLER_EMAIL ?? "";
