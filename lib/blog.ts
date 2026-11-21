@@ -546,6 +546,85 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-to-start-collecting-one-piece-cards",
+    title: "How to Start Collecting One Piece Cards",
+    description:
+      "The One Piece Card Game is one of the fastest-growing TCGs. Here is how to start collecting: sets, rarities, sealed boxes and a simple first-month plan.",
+    date: "2026-11-21",
+    shopLink: { label: "Browse sealed One Piece products", href: "/one-piece" },
+    body: [
+      {
+        type: "p",
+        text: "One Piece is one of the biggest anime and manga series in the world, and its trading card game has grown fast since Bandai launched it in English in late 2022. New sets arrive every few months, the cards feature the characters fans already love, and sealed boxes sell out quickly when a popular set drops. If you are thinking about collecting One Piece cards, here is a simple way to start without wasting money.",
+      },
+      { type: "h2", text: "What is the One Piece Card Game?" },
+      {
+        type: "p",
+        text: "The One Piece Card Game is a collectible card game published by Bandai. Players build decks around Leader cards — Luffy, Zoro, Nami, Shanks and the rest of the crews — and battle using Character cards, Event cards and Stage cards. DON!! cards act as the game's energy: you attach them to your cards to pay for attacks and abilities. You do not need to play the game to collect the cards, but knowing how the game works helps you understand why some cards are popular. Leaders and cards from the newest set are usually the ones collectors and players chase first.",
+      },
+      { type: "h2", text: "Start with a starter deck or a few packs" },
+      {
+        type: "p",
+        text: "The cheapest way in is a starter deck. Bandai sells ready-to-play decks built around one Leader, so you get a full deck, a Leader card and a set of DON!! cards in one box, and you can play a real game the same day. If you are collecting rather than playing, start with a few booster packs from the newest set instead. A single pack gives you a taste of the set's art and rarities without committing to a whole box. Buy from a retailer you trust, and check the product description: English packs hold 12 cards, while Japanese packs hold 6, so the two editions are not the same product.",
+      },
+      { type: "h2", text: "Understand the sets: the OP numbers" },
+      {
+        type: "p",
+        text: "Every main One Piece set has an OP number, starting with OP-01 Romance Dawn. Each new set adds new Leaders, new characters and new art for the same crews, and sets are released every few months — by late 2026 the game had reached OP-18. When you are starting out, pick one or two sets you like and focus on them instead of trying to collect everything. A complete set is a big job: a main set typically holds well over 100 different cards. Collecting one set at a time keeps the hobby fun and the spending under control.",
+      },
+      { type: "h2", text: "Rarities, DON!! cards and chase cards" },
+      {
+        type: "p",
+        text: "One Piece cards come in several rarities. Common and Uncommon cards make up most of a pack, Rare and Super Rare cards are harder to find, and Secret Rare cards are the top tier of a normal set. On top of that, many cards have alternate-art versions with different illustrations, and a few sets include Manga Rare cards — very scarce cards printed to look like manga panels — that collectors chase hardest. Bandai has never published official pull rates for the game, so nobody can promise you what a box contains. Treat any 'guaranteed hit' claim with suspicion, and enjoy the opening itself rather than counting on a specific card.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Leader cards: one per deck, and the face of most collections.",
+          "Alternate-art cards: the same card with rarer, often more striking art.",
+          "DON!! cards: the game's energy cards, with special versions in some sets.",
+          "Manga Rare cards: the scarcest chase cards in the sets that have them.",
+        ],
+      },
+      { type: "h2", text: "Sealed boxes or single packs?" },
+      {
+        type: "p",
+        text: "An English booster box holds 24 packs, so it is the efficient way to open a lot of a set at once — and sealed boxes also hold their appeal for collectors who never open them. But a box is a bigger spend, and pulls are random, so a box never guarantees any particular card. If you want one specific card, buying that single card from a reputable seller is usually cheaper than opening boxes until it appears. A good rule: open sealed product for the fun of it, and buy singles for the cards you actually want.",
+      },
+      { type: "h2", text: "Protect your cards from day one" },
+      {
+        type: "p",
+        text: "Cards lose value fast when they are scratched, bent or faded, so build the habit early. Sleeve cards you care about as soon as you open them, store them upright in a binder or a storage box, and keep them somewhere cool, dry and out of direct sunlight. Keep sealed boxes the same way — dry, cool and unstacked — and leave the plastic wrap on if you plan to keep a box sealed. A few cents of protection saves cards worth far more.",
+      },
+      { type: "h2", text: "A simple first-month plan" },
+      {
+        type: "ul",
+        items: [
+          "Pick a Leader or a crew you like — Straw Hats, the Red Hair Pirates, the Marines — and let that guide what you buy.",
+          "Buy one starter deck to learn the game, or a few packs from the newest set to start a collection.",
+          "Sleeve anything rare right away and store the rest in a binder.",
+          "Set a monthly budget before you buy a box, and stick to it.",
+          "Check the set list before you open anything, so you know which cards you are hoping to find.",
+        ],
+      },
+      {
+        type: "links",
+        items: [
+          { label: "Hobby Box vs Blaster Box: What Is the Difference?", href: "/blog/hobby-box-vs-blaster-box" },
+          { label: "Sealed vs Singles: Should You Buy Sealed Pokémon Cards or Single Cards?", href: "/blog/sealed-vs-singles-pokemon-cards" },
+          { label: "Buying Sealed Trading Cards Online: A Simple Checklist", href: "/blog/buying-sealed-cards-online-checklist" },
+          { label: "Browse sealed One Piece products", href: "/one-piece" },
+        ],
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Starting a One Piece collection is simple: pick a set you like, open a few packs or a starter deck, protect the cards you pull, and buy singles for the ones you really want. The game is still young, new sets arrive every few months, and the best collections are built slowly — one set, one crew and one careful purchase at a time.",
+      },
+    ],
+  },
+
 ];
 
 export const sortedPosts = () => [...posts].sort((a, b) => b.date.localeCompare(a.date));
