@@ -3,15 +3,23 @@
 
 import { randomBytes } from "crypto";
 import type { PaymentMethodId } from "./config";
+import type { Currency } from "./format";
+import { getProduct } from "./products";
+import { emptyTotals, type OrderCurrency, type TotalsByCurrency } from "./eur-pricing";
 
-export type StoredItem = { slug: string; name: string; qty: number; unitCents: number; lineCents: number; productId: string };
+export type StoredItem = { slug: string; name: string; qty: number; unitCents: number; lineCents: number; productId: string; currency: Currency };
 export type StoredOrder = {
   id: string;
   orderNumber: string;
   status: string;
   items: StoredItem[];
+  // Single-number totals, kept for the orders table (one total column).
+  // Exact for single-currency orders; for MIXED orders the USD equivalent
+  // (see the checkout route). The exact per-currency split is in `totals`.
   subtotalCents: number;
   totalCents: number;
+  currency: OrderCurrency;
+  totals: TotalsByCurrency; // exact per-currency totals, in cents
   paymentMethod: PaymentMethodId;
   customer: { name: string; email: string; phone: string; address: string; city: string; region: string; postalCode: string; country: string; notes: string };
   persisted: boolean;
@@ -48,22 +56,34 @@ const memoryByKey = new Map<string, string>();
 type NewOrder = Omit<StoredOrder, "id" | "orderNumber" | "status" | "persisted" | "duplicate">;
 
 function rowToOrder(row: any, items: any[]): StoredOrder {
+  // order_items has no currency column, so each line's currency is recovered
+  // from the catalog (a European edition stays priced in euros). The amounts
+  // themselves always come from the stored row, never from the catalog.
+  const orderCurrency = (row.currency ?? "USD") as OrderCurrency;
+  const mapped: StoredItem[] = items.map((i) => ({
+    slug: i.slug, name: i.name, qty: i.quantity, unitCents: i.unit_price_cents,
+    lineCents: i.line_total_cents, productId: i.product_id,
+    currency: getProduct(i.slug)?.currency ?? (orderCurrency === "MIXED" ? "USD" : orderCurrency),
+  }));
+  const totals = mapped.reduce((acc, i) => {
+    acc[i.currency] += i.lineCents;
+    return acc;
+  }, emptyTotals());
   return {
     id: row.id,
     orderNumber: row.order_number,
     status: row.status,
     subtotalCents: row.subtotal_cents,
     totalCents: row.total_cents,
+    currency: orderCurrency,
+    totals,
     paymentMethod: row.payment_method,
     customer: {
       name: row.customer_name, email: row.customer_email, phone: row.customer_phone,
       address: row.address_line, city: row.city, region: row.region,
       postalCode: row.postal_code ?? "", country: row.country, notes: row.notes ?? "",
     },
-    items: items.map((i) => ({
-      slug: i.slug, name: i.name, qty: i.quantity, unitCents: i.unit_price_cents,
-      lineCents: i.line_total_cents, productId: i.product_id,
-    })),
+    items: mapped,
     persisted: true,
   };
 }
@@ -108,7 +128,7 @@ export async function createOrder(input: NewOrder, idempotencyKey: string): Prom
         payment_method: input.paymentMethod,
         subtotal_cents: input.subtotalCents,
         total_cents: input.totalCents,
-        currency: "USD",
+        currency: input.currency,
       }),
       cache: "no-store",
     });
