@@ -87,7 +87,7 @@ export default async function AdminProductsPage({ searchParams }: { searchParams
               <div className="min-w-0 flex-1">
                 <p className="truncate text-sm font-semibold">{p.name}</p>
                 <p className="text-xs text-ink-soft">
-                  {formatPrice(p.price)} · {p.stock} in stock · {categoryLabel(p.category)}
+                  {formatPrice(p.price, p.currency)} · {p.stock} in stock · {categoryLabel(p.category)}
                 </p>
                 <p className="mt-1 flex flex-wrap gap-1 text-[11px] font-semibold">
                   {ex?.isNew && <span className="rounded bg-sky-100 px-1.5 py-0.5 text-sky-900">Added by you</span>}
