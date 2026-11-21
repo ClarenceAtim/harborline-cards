@@ -3,10 +3,10 @@
 import Link from "next/link";
 import { useCart } from "@/components/CartProvider";
 import ProductImage from "@/components/ProductImage";
-import { formatPrice } from "@/lib/format";
+import { formatPrice, nonzeroTotals } from "@/lib/format";
 
 export default function CartPage() {
-  const { lines, subtotal, ready, setQty, remove } = useCart();
+  const { lines, subtotals, ready, setQty, remove } = useCart();
 
   if (!ready) return <div className="container-x py-16 text-center text-ink-soft">Loading your cart…</div>;
 
@@ -30,7 +30,7 @@ export default function CartPage() {
               <div className="w-24 shrink-0 overflow-hidden rounded border border-ink/10"><ProductImage product={p} /></div>
               <div className="flex flex-1 flex-col gap-2">
                 <Link href={`/products/${p.slug}`} className="text-sm font-semibold hover:text-harbor">{p.name}</Link>
-                <p className="text-sm text-ink-soft">{formatPrice(p.price)} each</p>
+                <p className="text-sm text-ink-soft">{formatPrice(p.price, p.currency)} each</p>
                 <div className="mt-auto flex flex-wrap items-center gap-3">
                   <div className="flex items-center rounded-md border border-ink/20">
                     <button aria-label={`Decrease quantity of ${p.name}`} className="px-3 py-1.5" onClick={() => setQty(p.slug, qty - 1)} disabled={qty <= 1}>−</button>
@@ -40,7 +40,7 @@ export default function CartPage() {
                   <button className="text-sm font-semibold text-red-700 hover:underline" onClick={() => remove(p.slug)}>Remove</button>
                 </div>
               </div>
-              <p className="text-sm font-bold">{formatPrice(p.price * qty)}</p>
+              <p className="text-sm font-bold">{formatPrice(p.price * qty, p.currency)}</p>
             </li>
           ))}
         </ul>
@@ -48,9 +48,13 @@ export default function CartPage() {
         <aside className="h-fit rounded-lg border border-ink/10 bg-white p-5" aria-label="Order summary">
           <h2 className="font-semibold">Order summary</h2>
           <dl className="mt-4 space-y-2 text-sm">
-            <div className="flex justify-between"><dt>Subtotal</dt><dd>{formatPrice(subtotal)}</dd></div>
+            {nonzeroTotals(subtotals).map(({ currency, label }) => (
+              <div key={currency} className="flex justify-between"><dt>Subtotal ({currency})</dt><dd>{label}</dd></div>
+            ))}
             <div className="flex justify-between text-ink-soft"><dt>Shipping</dt><dd>Confirmed by seller</dd></div>
-            <div className="flex justify-between border-t border-ink/10 pt-2 text-base font-bold"><dt>Total</dt><dd>{formatPrice(subtotal)}</dd></div>
+            {nonzeroTotals(subtotals).map(({ currency, label }) => (
+              <div key={currency} className="flex justify-between border-t border-ink/10 pt-2 text-base font-bold"><dt>Total ({currency})</dt><dd>{label}</dd></div>
+            ))}
           </dl>
           <Link href="/checkout" className="btn-primary mt-5 w-full">Proceed to checkout</Link>
           <Link href="/shop" className="btn-ghost mt-2 w-full">Continue shopping</Link>
