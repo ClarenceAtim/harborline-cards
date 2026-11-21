@@ -76,9 +76,12 @@ function OrderCard({ o }: { o: AdminOrder }) {
         </div>
         <div className="flex items-center gap-3">
           <span className={`rounded-full px-3 py-1 text-xs font-semibold ${STATUS_STYLES[o.status] ?? "bg-ink/10"}`}>{label(o.status)}</span>
-          <span className="text-lg font-bold">{formatCents(o.totalCents)}</span>
+          <span className="text-lg font-bold">{formatCents(o.totalCents, o.currency === "MIXED" ? "USD" : o.currency)}{o.currency === "MIXED" ? " *" : ""}</span>
         </div>
       </div>
+      {o.currency === "MIXED" && (
+        <p className="mt-1 text-xs text-ink-soft">* Mixed $ + € order — total shown as the USD equivalent. See the order email for the exact split.</p>
+      )}
 
       <div className="mt-4 grid gap-4 text-sm sm:grid-cols-2">
         <div>
@@ -99,7 +102,7 @@ function OrderCard({ o }: { o: AdminOrder }) {
             {o.items.map((i, idx) => (
               <li key={idx} className="flex justify-between gap-3">
                 <span>{i.quantity} × {i.name}</span>
-                <span className="shrink-0 text-ink-soft">{formatCents(i.lineCents)}</span>
+                <span className="shrink-0 text-ink-soft">{formatCents(i.lineCents, i.currency)}</span>
               </li>
             ))}
           </ul>

@@ -4,6 +4,7 @@ import { getProduct } from "@/lib/products";
 import { toCents } from "@/lib/format";
 import { createOrder, ConfigError, setEmailStatus, type StoredOrder } from "@/lib/orders";
 import { sendSellerEmail, sendCustomerEmail } from "@/lib/email";
+import { EUR_USD_RATE, emptyTotals, orderCurrencyOf } from "@/lib/eur-pricing";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -48,15 +49,27 @@ export async function POST(req: Request) {
     if (p.stock <= 0 || p.availability !== "in_stock") { problems.push(`${p.name} is out of stock.`); continue; }
     if (it.qty > p.stock) { problems.push(`Only ${p.stock} of ${p.name} available.`); continue; }
     const unitCents = toCents(p.price);
-    lines.push({ slug: p.slug, productId: p.id, name: p.name, qty: it.qty, unitCents, lineCents: unitCents * it.qty });
+    lines.push({ slug: p.slug, productId: p.id, name: p.name, qty: it.qty, unitCents, lineCents: unitCents * it.qty, currency: p.currency });
   }
   if (problems.length) return NextResponse.json({ ok: false, error: problems.join(" ") }, { status: 409 });
 
-  const subtotalCents = lines.reduce((s, l) => s + l.lineCents, 0);
+  // Per-currency totals (dollars and euros are never added together).
+  const totals = lines.reduce((acc, l) => {
+    acc[l.currency] += l.lineCents;
+    return acc;
+  }, emptyTotals());
+  const currency = orderCurrencyOf(totals);
+  // The orders table keeps a single total column. For a single-currency order
+  // it holds that currency's total; for a mixed order it holds the USD
+  // equivalent (euros converted at the pricing rate). The exact split is in
+  // `totals`, the order emails and the confirmation page.
+  const subtotalCents = currency === "MIXED"
+    ? totals.USD + Math.round(totals.EUR * EUR_USD_RATE)
+    : totals.USD + totals.EUR;
 
   let order: StoredOrder;
   try {
-    order = await createOrder({ customer, items: lines, subtotalCents, totalCents: subtotalCents, paymentMethod }, idempotencyKey);
+    order = await createOrder({ customer, items: lines, subtotalCents, totalCents: subtotalCents, currency, totals, paymentMethod }, idempotencyKey);
   } catch (e) {
     if (e instanceof ConfigError) {
       return NextResponse.json({ ok: false, error: "Ordering is temporarily unavailable. Please try again later." }, { status: 503 });
@@ -90,8 +103,10 @@ export async function POST(req: Request) {
     order: {
       orderNumber: order.orderNumber,
       status: order.status,
-      items: order.items.map((i) => ({ slug: i.slug, name: i.name, qty: i.qty, unitCents: i.unitCents, lineCents: i.lineCents })),
+      items: order.items.map((i) => ({ slug: i.slug, name: i.name, qty: i.qty, unitCents: i.unitCents, lineCents: i.lineCents, currency: i.currency })),
       totalCents: order.totalCents,
+      currency: order.currency,
+      totals: order.totals,
       paymentMethod: order.paymentMethod,
       persisted: order.persisted,
     },

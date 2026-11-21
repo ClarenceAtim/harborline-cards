@@ -4,6 +4,7 @@ import PhotoInput from "@/components/PhotoInput";
 import { adminEnabled, isAdmin } from "@/lib/admin-auth";
 import { listExtras } from "@/lib/admin-catalog";
 import { applyExtras } from "@/lib/catalog-merge";
+import { formatPrice } from "@/lib/format";
 import { baseProducts, categories } from "@/lib/products";
 import { removeItem, saveProduct } from "../actions";
 
@@ -95,7 +96,10 @@ export default async function EditProductPage({ searchParams }: { searchParams: 
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label htmlFor="price" className="label">Price (US dollars)</label>
-            <input id="price" name="price" type="number" step="0.01" min="0.01" required defaultValue={product?.price ?? ""} className="field" placeholder="49.95" />
+            <input id="price" name="price" type="number" step="0.01" min="0.01" required defaultValue={product?.usdPrice ?? product?.price ?? ""} className="field" placeholder="49.95" />
+            {product?.currency === "EUR" && (
+              <p className="mt-1 text-xs text-ink-soft">European edition — shows as {formatPrice(product.price, "EUR")} on the site. The euro price follows this dollar price automatically.</p>
+            )}
           </div>
           <div>
             <label htmlFor="stock" className="label">In stock (quantity)</label>

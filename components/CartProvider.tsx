@@ -2,12 +2,15 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { products, type Product } from "@/lib/products";
+import { emptyTotals, type TotalsByCurrency } from "@/lib/eur-pricing";
 
 type Line = { slug: string; qty: number };
 type CartCtx = {
   lines: { product: Product; qty: number }[];
   count: number;
-  subtotal: number; // dollars, display only. The server recomputes totals.
+  // Per-currency subtotals, display only. The server recomputes totals.
+  // Dollars and euros are never added together.
+  subtotals: TotalsByCurrency;
   ready: boolean;
   add: (slug: string, qty?: number) => void;
   setQty: (slug: string, qty: number) => void;
@@ -67,10 +70,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     const lines = raw
       .map((l) => ({ product: products.find((p) => p.slug === l.slug)!, qty: l.qty }))
       .filter((l) => l.product && l.product.stock > 0);
+    const cents = lines.reduce((acc, l) => {
+      acc[l.product.currency] += Math.round(l.product.price * 100) * l.qty;
+      return acc;
+    }, emptyTotals());
     return {
       lines,
       count: lines.reduce((s, l) => s + l.qty, 0),
-      subtotal: lines.reduce((s, l) => s + Math.round(l.product.price * 100) * l.qty, 0) / 100,
+      subtotals: { USD: cents.USD / 100, EUR: cents.EUR / 100 },
       ready, add, setQty, remove, clear,
     };
   }, [raw, ready, add, setQty, remove, clear]);

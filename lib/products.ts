@@ -18,7 +18,8 @@
 //    Rows without one use CATALOG_LAST_EDITED below. When you change a row, add/update its
 //    `updated` date so search engines see the real edit date.
 
-import { slugify } from "./format";
+import { slugify, type Currency } from "./format";
+import { eurToUsd } from "./eur-pricing";
 import generatedImages from "./images.generated.json";
 import extraItems from "./catalog-extras.generated.json";
 import { applyExtras, type Extra } from "./catalog-merge";
@@ -66,8 +67,9 @@ export type Product = {
   year: number;
   boxType: string;
   description: string;
-  price: number; // USD dollars, e.g. 33.95
-  currency: "USD";
+  price: number; // in the product's currency, e.g. 33.95
+  currency: Currency;
+  usdPrice?: number; // USD source price, for euro products (the admin edits in USD)
   image: string; // "" => placeholder shown
   imageStatus: "source-photo" | "placeholder";
   gallery: string[];
@@ -96,6 +98,7 @@ type Row = {
   description?: string; specs?: Record<string, string>; stockVerified?: boolean;
   updated?: string; // YYYY-MM-DD, last edited; update it when you change this row
   source?: string; // overrides SOURCE for products priced from other retailers
+  currency?: Currency; // EUR for European editions (price is then in euros)
 };
 
 function build(r: Row, i: number): Product {
@@ -116,7 +119,9 @@ function build(r: Row, i: number): Product {
     boxType: r.boxType,
     description,
     price: r.price,
-    currency: "USD",
+    currency: r.currency ?? "USD",
+    // Euro rows keep their USD equivalent so the admin price field (USD-only) round-trips.
+    usdPrice: r.currency === "EUR" ? eurToUsd(r.price) : undefined,
     image: img,
     imageStatus: img ? "source-photo" : "placeholder",
     gallery: [],
@@ -209,26 +214,26 @@ const rows: Row[] = [
   { name: "Pokémon Scarlet & Violet Prismatic Evolutions Poster Collection 6 Box Case", price: 299.95, brand: "Pokémon", category: "pokemon", set: "Prismatic Evolutions", year: 2025, boxType: "Collection Case" },
   { name: "Pokémon Mega Evolution Pitch Black Build & Battle Box", price: 74.95, brand: "Pokémon", category: "pokemon", set: "Pitch Black", year: 2026, boxType: "Build & Battle Box" },
   // ---------- European editions (added 2026-11-21) ----------
-  // Priced from European retailers (EUR market price x 1.0785, rounded to .95),
-  // matching the pattern of the French/German/Spanish editions added via the admin.
+  // Priced in euros, from European retailers. The admin stores USD only, so
+  // these rows carry their euro price directly (see lib/eur-pricing.ts).
   {
-    name: "Pokémon Mega-Entwicklung Display 36 Booster (German Edition)", price: 204.95, brand: "Pokémon", category: "pokemon",
-    set: "Mega-Entwicklung", year: 2025, boxType: "Booster Display",
+    name: "Pokémon Mega-Entwicklung Display 36 Booster (German Edition)", price: 189.95, brand: "Pokémon", category: "pokemon",
+    set: "Mega-Entwicklung", year: 2025, boxType: "Booster Display", currency: "EUR",
     description: "German edition. Sealed display box with 36 Mega-Entwicklung booster packs. Check the manufacturer's checklist for exact contents and odds before purchasing.",
     specs: { Edition: "German", EAN: "0196214115958" },
     source: "billiger.de / Kaufland.de public listings, retrieved 2026-11-21",
     updated: "2026-11-21",
   },
   {
-    name: "Pokémon Escarlata y Púrpura – 151 Colección Ultra Premium Mew-ex (Spanish Edition)", price: 969.95, brand: "Pokémon", category: "pokemon",
-    set: "Escarlata y Púrpura – 151", year: 2023, boxType: "Colección Ultra Premium",
+    name: "Pokémon Escarlata y Púrpura – 151 Colección Ultra Premium Mew-ex (Spanish Edition)", price: 900, brand: "Pokémon", category: "pokemon",
+    set: "Escarlata y Púrpura – 151", year: 2023, boxType: "Colección Ultra Premium", currency: "EUR",
     description: "Spanish edition. Sealed Ultra Premium Collection with 16 booster packs and a metal Mew ex promo card. Check the manufacturer's checklist for exact contents and odds before purchasing.",
     source: "TCGFusion public listing, retrieved 2026-11-21",
     updated: "2026-11-21",
   },
   {
-    name: "Pokémon Escarlata y Púrpura – Evoluciones Prismáticas Colección Súper Premium (Spanish Edition)", price: 279.95, brand: "Pokémon", category: "pokemon",
-    set: "Escarlata y Púrpura – Evoluciones Prismáticas", year: 2025, boxType: "Colección Súper Premium",
+    name: "Pokémon Escarlata y Púrpura – Evoluciones Prismáticas Colección Súper Premium (Spanish Edition)", price: 259.90, brand: "Pokémon", category: "pokemon",
+    set: "Escarlata y Púrpura – Evoluciones Prismáticas", year: 2025, boxType: "Colección Súper Premium", currency: "EUR",
     description: "Spanish edition. Sealed Super Premium Collection with 15 booster packs, an Eevee ex promo card, deck box, playmat and 65 card sleeves. Check the manufacturer's checklist for exact contents and odds before purchasing.",
     source: "manavortex.es public listing, retrieved 2026-11-21",
     updated: "2026-11-21",

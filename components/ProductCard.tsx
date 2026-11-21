@@ -17,7 +17,7 @@ export default function ProductCard({ product }: { product: Product }) {
           <Link href={`/products/${product.slug}`} className="hover:text-harbor">{product.name}</Link>
         </h3>
         <div className="mt-auto flex items-baseline justify-between pt-2">
-          <span className="text-lg font-bold">{formatPrice(product.price)}</span>
+          <span className="text-lg font-bold">{formatPrice(product.price, product.currency)}</span>
           <span className={`text-xs font-semibold ${soldOut ? "text-red-700" : "text-emerald-700"}`}>{soldOut ? "Out of stock" : "In stock"}</span>
         </div>
         <div className="pt-2"><AddToCart product={product} /></div>

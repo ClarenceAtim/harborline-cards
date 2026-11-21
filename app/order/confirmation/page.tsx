@@ -3,12 +3,15 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { paymentMethods } from "@/lib/config";
-import { formatCents } from "@/lib/format";
+import { formatCents, nonzeroTotals, type Currency } from "@/lib/format";
+import type { OrderCurrency, TotalsByCurrency } from "@/lib/eur-pricing";
 
 type Summary = {
   orderNumber: string;
-  items: { slug: string; name: string; qty: number; unitCents: number; lineCents: number }[];
+  items: { slug: string; name: string; qty: number; unitCents: number; lineCents: number; currency?: Currency }[];
   totalCents: number;
+  currency?: OrderCurrency;
+  totals?: TotalsByCurrency;
   paymentMethod: string;
   persisted: boolean;
 };
@@ -39,6 +42,8 @@ export default function ConfirmationPage() {
   }
 
   const pm = paymentMethods.find((m) => m.id === order.paymentMethod)?.label ?? order.paymentMethod;
+  // Older saved summaries (pre-euro) carry no currency; they were all USD.
+  const totals = order.totals ?? { USD: order.totalCents, EUR: 0 };
 
   return (
     <div className="container-x max-w-3xl py-10">
@@ -57,12 +62,14 @@ export default function ConfirmationPage() {
         <ul className="divide-y divide-ink/10 text-sm">
           {order.items.map((i) => (
             <li key={i.slug} className="flex justify-between gap-3 py-2">
-              <span>{i.name} <span className="text-ink-faint">× {i.qty} @ {formatCents(i.unitCents)}</span></span>
-              <span className="font-semibold">{formatCents(i.lineCents)}</span>
+              <span>{i.name} <span className="text-ink-faint">× {i.qty} @ {formatCents(i.unitCents, i.currency ?? "USD")}</span></span>
+              <span className="font-semibold">{formatCents(i.lineCents, i.currency ?? "USD")}</span>
             </li>
           ))}
         </ul>
-        <p className="mt-3 flex justify-between border-t border-ink/10 pt-3 font-bold"><span>Total (excl. shipping)</span><span>{formatCents(order.totalCents)}</span></p>
+        {nonzeroTotals(totals, true).map(({ currency, label }) => (
+          <p key={currency} className="mt-3 flex justify-between border-t border-ink/10 pt-3 font-bold"><span>Total ({currency}, excl. shipping)</span><span>{label}</span></p>
+        ))}
         <p className="mt-2 text-sm text-ink-soft">Payment method: <strong>{pm}</strong></p>
       </section>
 

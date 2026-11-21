@@ -1,4 +1,5 @@
 import { products, type Product } from "./products";
+import { eurToUsd } from "./eur-pricing";
 
 export const PAGE_SIZE = 24;
 
@@ -15,14 +16,18 @@ export function filterProducts(sp: ShopParams) {
   const max = sp.max ? Number(sp.max) : NaN;
   const year = sp.year ? Number(sp.year) : NaN;
 
+  // The price filter and price sorts compare in US dollars, so euro products
+  // are converted (the filter is labelled USD). Display still shows euros.
+  const usdPrice = (p: Product) => (p.currency === "EUR" ? eurToUsd(p.price) : p.price);
+
   let list = products.filter((p) => {
     if (sp.category && p.category !== sp.category) return false;
     if (sp.brand && p.brand !== sp.brand) return false;
     if (sp.set && p.set !== sp.set) return false;
     if (sp.boxType && p.boxType !== sp.boxType) return false;
     if (!Number.isNaN(year) && p.year !== year) return false;
-    if (!Number.isNaN(min) && p.price < min) return false;
-    if (!Number.isNaN(max) && p.price > max) return false;
+    if (!Number.isNaN(min) && usdPrice(p) < min) return false;
+    if (!Number.isNaN(max) && usdPrice(p) > max) return false;
     if (sp.inStock === "1" && !(p.stock > 0 && p.availability === "in_stock")) return false;
     if (q) {
       const hay = `${p.name} ${p.brand} ${p.set} ${p.boxType} ${p.year}`.toLowerCase();
@@ -36,8 +41,8 @@ export function filterProducts(sp: ShopParams) {
   const cmp: Record<SortKey, (a: Product, b: Product) => number> = {
     // "Newest" = newest release year first, then later catalog entries. Add a releaseDate field for finer control.
     newest: (a, b) => b.year - a.year || order.get(a.id)! - order.get(b.id)!,
-    "price-asc": (a, b) => a.price - b.price,
-    "price-desc": (a, b) => b.price - a.price,
+    "price-asc": (a, b) => usdPrice(a) - usdPrice(b),
+    "price-desc": (a, b) => usdPrice(b) - usdPrice(a),
     featured: (a, b) => Number(b.featured) - Number(a.featured) || order.get(a.id)! - order.get(b.id)!,
   };
   list = [...list].sort(cmp[sort] ?? cmp.featured);

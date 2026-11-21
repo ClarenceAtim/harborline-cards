@@ -92,7 +92,7 @@ export default async function ProductPage({ params }: { params: Params }) {
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-ink-faint">{p.brand} · {p.set} · {p.year}</p>
           <h1 className="mt-1 font-display text-3xl font-bold leading-tight">{p.name}</h1>
-          <p className="mt-4 text-3xl font-bold">{formatPrice(p.price)}</p>
+          <p className="mt-4 text-3xl font-bold">{formatPrice(p.price, p.currency)}</p>
           <p className={`mt-1 text-sm font-semibold ${soldOut ? "text-red-700" : "text-emerald-700"}`}>
             {soldOut ? "Out of stock" : "In stock"}
           </p>
