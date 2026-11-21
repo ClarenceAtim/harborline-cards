@@ -1,14 +1,18 @@
 // Server-only helpers for the admin orders page. Uses the Supabase service-role key.
 
 import { orderStatuses } from "./config";
+import type { Currency } from "./format";
+import { getProduct } from "./products";
+import type { OrderCurrency } from "./eur-pricing";
 
-export type AdminItem = { name: string; quantity: number; unitCents: number; lineCents: number };
+export type AdminItem = { name: string; quantity: number; unitCents: number; lineCents: number; currency: Currency };
 export type AdminOrder = {
   id: string;
   orderNumber: string;
   status: string;
   createdAt: string;
   totalCents: number;
+  currency: OrderCurrency;
   paymentMethod: string;
   sellerEmailStatus: string;
   emailError: string | null;
@@ -48,33 +52,40 @@ export async function listOrders(status?: string): Promise<{ orders: AdminOrder[
       for (const r of (await countsRes.json()) as { status: string }[]) counts[r.status] = (counts[r.status] ?? 0) + 1;
     }
 
-    const orders: AdminOrder[] = rows.map((row) => ({
-      id: row.id,
-      orderNumber: row.order_number,
-      status: row.status,
-      createdAt: row.created_at,
-      totalCents: row.total_cents,
-      paymentMethod: row.payment_method,
-      sellerEmailStatus: row.seller_email_status ?? "pending",
-      emailError: row.email_error ?? null,
-      customer: {
-        name: row.customer_name,
-        email: row.customer_email,
-        phone: row.customer_phone,
-        address: row.address_line,
-        city: row.city,
-        region: row.region,
-        postalCode: row.postal_code ?? "",
-        country: row.country,
-        notes: row.notes ?? "",
-      },
-      items: (row.order_items ?? []).map((i: any) => ({
-        name: i.name,
-        quantity: i.quantity,
-        unitCents: i.unit_price_cents,
-        lineCents: i.line_total_cents,
-      })),
-    }));
+    const orders: AdminOrder[] = rows.map((row) => {
+      const currency = (row.currency ?? "USD") as OrderCurrency;
+      return {
+        id: row.id,
+        orderNumber: row.order_number,
+        status: row.status,
+        createdAt: row.created_at,
+        totalCents: row.total_cents,
+        currency,
+        paymentMethod: row.payment_method,
+        sellerEmailStatus: row.seller_email_status ?? "pending",
+        emailError: row.email_error ?? null,
+        customer: {
+          name: row.customer_name,
+          email: row.customer_email,
+          phone: row.customer_phone,
+          address: row.address_line,
+          city: row.city,
+          region: row.region,
+          postalCode: row.postal_code ?? "",
+          country: row.country,
+          notes: row.notes ?? "",
+        },
+        // order_items has no currency column; each line's currency is recovered
+        // from the catalog (a European edition stays priced in euros).
+        items: (row.order_items ?? []).map((i: any) => ({
+          name: i.name,
+          quantity: i.quantity,
+          unitCents: i.unit_price_cents,
+          lineCents: i.line_total_cents,
+          currency: getProduct(i.slug)?.currency ?? (currency === "MIXED" ? "USD" : currency),
+        })),
+      };
+    });
     return { orders, counts };
   } catch (e) {
     console.error("listOrders failed", e);
