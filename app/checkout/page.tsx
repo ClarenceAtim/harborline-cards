@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { useCart } from "@/components/CartProvider";
 import { enabledPaymentMethods } from "@/lib/config";
-import { formatPrice } from "@/lib/format";
+import { formatPrice, nonzeroTotals } from "@/lib/format";
 
 const KEY_STORE = "harborline_idem_v1";
 const fields = ["name", "email", "phone", "address", "city", "region", "postalCode", "country", "notes"] as const;
@@ -17,7 +17,7 @@ function newKey() {
 
 export default function CheckoutPage() {
   const router = useRouter();
-  const { lines, subtotal, ready, clear } = useCart();
+  const { lines, subtotals, ready, clear } = useCart();
   const methods = enabledPaymentMethods();
   const [form, setForm] = useState<Record<F, string>>({ name: "", email: "", phone: "", address: "", city: "", region: "", postalCode: "", country: "", notes: "" });
   const [payment, setPayment] = useState(methods[0]?.id ?? "");
@@ -158,11 +158,13 @@ export default function CheckoutPage() {
             {lines.map((l) => (
               <li key={l.product.slug} className="flex justify-between gap-3 py-2">
                 <span>{l.product.name} <span className="text-ink-faint">× {l.qty}</span></span>
-                <span className="shrink-0 font-semibold">{formatPrice(l.product.price * l.qty)}</span>
+                <span className="shrink-0 font-semibold">{formatPrice(l.product.price * l.qty, l.product.currency)}</span>
               </li>
             ))}
           </ul>
-          <div className="mt-3 flex justify-between border-t border-ink/10 pt-3 font-bold"><span>Total</span><span>{formatPrice(subtotal)}</span></div>
+          {nonzeroTotals(subtotals).map(({ currency, label }) => (
+            <div key={currency} className="mt-3 flex justify-between border-t border-ink/10 pt-3 font-bold"><span>Total ({currency})</span><span>{label}</span></div>
+          ))}
           <p className="mt-1 text-xs text-ink-faint">Shipping cost confirmed by the seller. Totals are re-calculated on the server.</p>
 
           {(formError || errors.items) && <p role="alert" className="mt-4 rounded bg-red-50 p-3 text-sm text-red-800">{formError || errors.items}</p>}
