@@ -2,6 +2,7 @@
 // onto the catalog that lives in code. Pure functions: safe to import anywhere.
 
 import type { CategorySlug, Product } from "./products";
+import { isEuropeanEdition, usdToEur } from "./eur-pricing";
 
 export type Extra = {
   slug: string;
@@ -88,7 +89,16 @@ export function applyExtras(base: Product[], extras: Extra[], opts: { keepHidden
       p.name = x.name;
       p.seoTitle = `${x.name} | Harborline Cards`;
     }
-    if (typeof x.price === "number") p.price = x.price;
+    // The admin price field is US dollars. On a euro product the stored
+    // dollars convert to euros, so a seller price edit flows through.
+    if (typeof x.price === "number") {
+      if (p.currency === "EUR") {
+        p.usdPrice = x.price;
+        p.price = usdToEur(x.price);
+      } else {
+        p.price = x.price;
+      }
+    }
     if (typeof x.stock === "number") {
       p.stock = x.stock;
       p.availability = x.stock > 0 ? "in_stock" : "out_of_stock";
@@ -102,6 +112,18 @@ export function applyExtras(base: Product[], extras: Extra[], opts: { keepHidden
       p.verification.image = "verified";
     }
     if (x.updatedAt) p.updated = x.updatedAt.slice(0, 10);
+  }
+
+  // European editions are priced in euros. The admin stores USD only, so the
+  // euro price is derived from the stored USD price (see lib/eur-pricing.ts).
+  // Runs last, so a seller price edit flows through to the euro price.
+  // Products already priced in euros (code catalog) are left alone.
+  for (const p of out) {
+    if (p.currency === "USD" && isEuropeanEdition(p.slug)) {
+      p.usdPrice = p.price;
+      p.price = usdToEur(p.price);
+      p.currency = "EUR";
+    }
   }
   return out;
 }
