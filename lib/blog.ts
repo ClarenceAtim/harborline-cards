@@ -625,6 +625,94 @@ export const posts: Post[] = [
     ],
   },
 
+  {
+    slug: "pokemon-card-condition-guide",
+    title: "Pokémon Card Condition Guide: What Near Mint, Lightly Played and Heavily Played Really Mean",
+    description:
+      "Near Mint, Lightly Played, Heavily Played — card condition grades decide what a single is worth and whether it is right for your binder. Here is how to read them before you buy.",
+    date: "2026-11-24",
+    shopLink: { label: "Browse Pokémon cards", href: "/pokemon" },
+    body: [
+      {
+        type: "p",
+        text: "Two copies of the same Pokémon card can look almost identical in a photo and still be very different purchases. One is Near Mint and ready for a binder or a grading submission; the other is Lightly Played, with a whitened corner you only notice in person. Condition is the language buyers and sellers use to describe exactly that difference, and learning it is the fastest way to stop overpaying for singles.",
+      },
+      { type: "h2", text: "Why condition matters when you buy singles" },
+      {
+        type: "p",
+        text: "When you buy a sealed product, every pack is a surprise and condition is mostly a matter of luck. When you buy a single card, you are buying one specific copy, and its condition is part of what you are paying for. A card in better condition is worth more to collectors, looks better in a binder, and has a better chance of earning a high grade if you ever send it to a grading company. The same card in worse condition can still be a great buy — if the price reflects it and you know what you are getting. Problems start when the condition is not described honestly, or when the buyer does not know how to read the description.",
+      },
+      { type: "h2", text: "The condition grades, from best to worst" },
+      {
+        type: "p",
+        text: "Most sellers in the United States and Canada use the same five grades. They are not set by any official body, so two sellers can disagree on a borderline card, but the definitions below are the ones collectors generally agree on.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Near Mint (NM): the card looks fresh out of a pack. Corners are sharp, edges are clean, the surface has no scratches, and the back is free of whitening. Tiny printing quirks from the factory are usually still Near Mint, because they happened before the card was ever handled.",
+          "Lightly Played (LP): the card shows a small amount of wear. You might see slight whitening on one or two corners, a faint edge mark, or a light surface scratch that is only visible at an angle. The card still looks good in a binder and is fine for play.",
+          "Moderately Played (MP): the wear is easy to see. Several corners show whitening, the edges are worn, and there may be light creasing or a few visible surface scratches. The card is clearly used, but it is still flat, complete and playable.",
+          "Heavily Played (HP): the card has obvious wear all over — heavy whitening, bent or soft corners, deep scratches, or a crease you can feel. It is usually bought to play with or to fill a gap in a collection cheaply, not to display.",
+          "Damaged: the card has a major flaw, such as a tear, a fold, water damage, writing on it, or a missing piece. Damaged cards are worth very little to collectors, and a seller should always say so clearly.",
+        ],
+      },
+      { type: "h2", text: "What to look at on a card" },
+      {
+        type: "p",
+        text: "Condition is judged on four things. Learn to check all four and you will rarely be surprised by a card you receive.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Corners: hold the card at an angle under a light. Whitening — tiny white marks where the card layer has chipped — shows up first on the corners and is the most common flaw.",
+          "Edges: run your eye along all four edges. Nicks, rough spots and whitening on the edges are the next thing to check, and they matter most on the back of the card.",
+          "Surface: tilt the card to catch reflections. Scratches, print lines, fingerprints and dents are easiest to see this way. On holofoil cards, also check the foil for scratching and for small dents called dimples.",
+          "Centering: look at the borders. A card with one border much wider than the opposite one is off-center. Centering does not change the condition grade the way wear does, but it matters a lot if you plan to grade the card, and collectors often prefer well-centered copies.",
+        ],
+      },
+      { type: "h2", text: "Near Mint vs Lightly Played: the grade that causes the most confusion" },
+      {
+        type: "p",
+        text: "The line between Near Mint and Lightly Played is where most disagreements happen, because it comes down to a judgment call. A good rule of thumb: if you can see wear without looking hard for it, the card is not Near Mint. A single tiny white dot on one corner, or one faint scratch you only find by tilting the card, is the kind of thing that separates the two grades. When you are buying, treat any listing that says Near Mint but shows visible whitening in the photos with caution, and ask the seller for a closer photo before you pay. When you are selling, grade your cards one step more strictly than you think you need to — buyers remember sellers who under-promise and over-deliver.",
+      },
+      { type: "h2", text: "How to judge condition from photos when you buy online" },
+      {
+        type: "ul",
+        items: [
+          "Ask for photos of the front and the back. A listing with only a front photo hides the side where most wear shows.",
+          "Ask for close-ups of the corners and edges, not just a straight-on shot of the whole card.",
+          "Be wary of blurry photos, heavy glare or a card photographed inside a sleeve that hides the edges — all three make wear hard to see.",
+          "Read the seller's return policy before you order. A seller who stands behind their condition grades will say what happens if a card arrives in worse shape than described.",
+          "If a price looks far below what other sellers ask for the same card in the same grade, the condition is the first thing to question.",
+        ],
+      },
+      { type: "h2", text: "Should you buy played cards?" },
+      {
+        type: "p",
+        text: "Yes, often. Played cards make sense in three situations: you want the card to play with, where a little wear does not matter at all; you are filling a binder and the artwork matters more than perfection; or the card you want is expensive in Near Mint and a Lightly Played copy lets you own it for much less. The mistake is paying a Near Mint price for a played card, not buying played cards themselves. Decide what the card is for before you buy, and let that decide which grade you need.",
+      },
+      { type: "h2", text: "Protecting the condition of the cards you already own" },
+      {
+        type: "p",
+        text: "Condition only goes one way — it never improves on its own. Sleeve valuable cards as soon as you pull them, and put the best ones in a toploader or a binder with side-loading pockets. Keep cards out of direct sunlight, away from damp rooms, and out of pockets and backpacks without protection. Wash and dry your hands before handling expensive cards, and hold them by the edges.",
+      },
+      {
+        type: "links",
+        items: [
+          { label: "How Pokémon Card Grading Works: PSA, BGS and CGC Explained", href: "/blog/pokemon-card-grading-explained" },
+          { label: "How to Spot Fake Pokémon Cards: A Buyer's Guide", href: "/blog/how-to-spot-fake-pokemon-cards" },
+          { label: "Sealed vs Singles: Should You Buy Sealed Pokémon Cards or Single Cards?", href: "/blog/sealed-vs-singles-pokemon-cards" },
+          { label: "Buying Sealed Trading Cards Online: A Simple Checklist", href: "/blog/buying-sealed-cards-online-checklist" },
+        ],
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Card condition is not complicated, but it is the one thing that separates a good single-card purchase from a disappointing one. Learn the five grades, check the corners, edges, surface and centering, and always look at the back of the card before you buy. Buy the grade that matches what the card is for — Near Mint for the binder and the grading envelope, Lightly Played or better for the deck — and never pay a Near Mint price for a played card. Do that, and your collection will hold its value far better than a pile of mystery-condition singles ever will.",
+      },
+    ],
+  },
 ];
 
 export const sortedPosts = () => [...posts].sort((a, b) => b.date.localeCompare(a.date));
