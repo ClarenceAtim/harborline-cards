@@ -44,7 +44,7 @@ function newProduct(x: Extra, n: number): Product {
     set,
     year,
     boxType,
-    description: x.description || `${name}. Check the manufacturer's checklist for exact contents and odds before purchasing.`,
+    description: x.description || `${name} is a sealed ${boxType.toLowerCase() || "trading-card product"} from ${set || brand || "this release"} (${year}). It is listed for collectors who want factory-sealed product from this set; check the manufacturer's checklist for exact contents and odds before purchasing.`,
     price: x.price ?? 0,
     currency: "USD",
     image: x.image ?? "",
@@ -54,8 +54,8 @@ function newProduct(x: Extra, n: number): Product {
     availability: stock > 0 ? "in_stock" : "out_of_stock",
     featured: !!x.featured,
     specifications: { Brand: brand, Set: set, Year: String(year), Format: boxType },
-    seoTitle: `${name} | Harborline Cards`,
-    seoDescription: `Buy ${name}. ${boxType} from ${set}. Order request with seller-confirmed payment.`,
+    seoTitle: name,
+    seoDescription: `Shop ${name}, a sealed ${boxType.toLowerCase() || "trading-card product"} from ${set || brand || "this release"} (${year}). Order request with seller-confirmed payment and shipping.`,
     // Seller-added products carry their edit date when the catalog pull provides one;
     // otherwise fall back to the catalog's known-as-of date (see CATALOG_LAST_EDITED in lib/products.ts).
     updated: x.updatedAt ? x.updatedAt.slice(0, 10) : "2026-10-12",
