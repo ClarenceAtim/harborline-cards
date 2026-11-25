@@ -713,6 +713,107 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-to-start-collecting-sports-cards",
+    title: "How to Start Collecting Sports Cards in 2026: A Beginner's Guide",
+    description:
+      "New to sports cards? Learn how to pick a sport, choose sealed boxes, spot rookie cards and protect your collection without overspending.",
+    date: "2026-11-25",
+    shopLink: { label: "Browse sealed sports card boxes", href: "/shop" },
+    body: [
+      {
+        type: "p",
+        text: "Sports cards are one of the easiest hobbies to start and one of the easiest to overspend on. Baseball, basketball, football, hockey and soccer cards all come in sealed packs and boxes, but every sport has its own sets, star players and language. If you are new to collecting in the United States or Canada, this guide explains the basics: how to pick a starting point, what the main card types mean, how sealed boxes differ, and how to protect the cards you pull.",
+      },
+      { type: "h2", text: "Start with one sport, one team or one player" },
+      {
+        type: "p",
+        text: "The fastest way to feel overwhelmed is to try to collect everything at once. Pick one focus first. Many collectors start with the sport they already watch, then narrow it down to a favourite team or a small group of players. A team collection is easy to enjoy because every card connects to games you follow. A player collection goes deeper on one athlete across sets and years. Set building means trying to complete every card in one release, which is satisfying but takes patience. Any of these is a good start. What matters is having a reason for each purchase.",
+      },
+      { type: "h2", text: "Learn the basic card types" },
+      {
+        type: "p",
+        text: "Most sports card sets are built from the same kinds of cards. Once you know these five terms, product descriptions and checklists become much easier to read.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Base cards: the main cards in a set, usually numbered in a checklist. Most cards in a pack are base cards.",
+          "Rookie cards: a player's early cards, often from the first main set that includes them. Rookie definitions and logos vary by manufacturer and set, so check the checklist if that detail matters to you.",
+          "Inserts: special themed cards that sit outside the main base set, often with different designs.",
+          "Parallels: versions of a base card with a different colour, finish or border. Some parallels are serial-numbered, which means the card itself shows how many copies were printed.",
+          "Autograph and memorabilia cards: cards signed by a player, or cards that include a piece of material such as a jersey swatch. These are usually much rarer than base cards, and whether one is guaranteed depends on the exact product.",
+        ],
+      },
+      { type: "h2", text: "Sealed boxes: read the box, not just the name" },
+      {
+        type: "p",
+        text: "Sealed sports cards come in several box types, and the names are not standardised across manufacturers. Hobby boxes are aimed at hobby shops and serious collectors and often carry better odds at premium cards. Blaster boxes, mega boxes, hanger boxes and value packs are usually lower-priced retail formats with fewer packs. Contents change from set to set: the number of packs, the cards per pack, and whether autographs or memorabilia cards are guaranteed or only possible. Always read the full product description before you buy.",
+      },
+      { type: "h2", text: "Sealed packs or single cards?" },
+      {
+        type: "p",
+        text: "Opening sealed packs is the fun part of the hobby, and it is the best way to discover a new set. It is not an efficient way to find one specific card. Rookie cards and other popular cards can be hard to pull, and opening box after box to chase one player usually costs more than buying that single card directly. A simple rule works well: buy sealed product for the experience and for building a base of cards, and buy singles when you want one exact card. Treat opening packs as entertainment with a budget, not as a reliable way to make money.",
+      },
+      { type: "h2", text: "How to choose your first box" },
+      {
+        type: "ul",
+        items: [
+          "Start with a recent set from the sport you follow, so the players and teams are familiar.",
+          "Check the year, the set name, the box type, the number of packs and the cards per pack.",
+          "Read the wording on premium cards carefully. There is a big difference between a guaranteed autograph and a chance at one.",
+          "Set your budget before you shop, and include shipping in that budget. If you are ordering across the US and Canada border, check delivery times and shipping costs before you pay.",
+          "Buy from a seller with clear contact details, clear product photos and a published shipping and returns policy.",
+        ],
+      },
+      { type: "h2", text: "What to do when you open packs" },
+      {
+        type: "p",
+        text: "Open packs with clean, dry hands and sort as you go. Put rookies, parallels, inserts and any autograph or memorabilia cards in penny sleeves right away, and use a toploader for the cards you care about most. Check the front and back of each card: serial numbering, parallel colours and rookie markings are easy to miss. Keep a simple list of what you pulled if you are building a set, and do not throw away base cards until you have checked them against the checklist.",
+      },
+      { type: "h2", text: "Protect and store your collection" },
+      {
+        type: "p",
+        text: "Condition affects how much a card is worth and how good it looks in a binder, so protect cards from day one. Store sleeved cards upright in a binder or a storage box, keep them somewhere cool, dry and out of direct sunlight, and keep sealed boxes unstacked so the corners are not crushed. Avoid tape and stickers on boxes or cards, and handle valuable cards by the edges. A few cents of sleeves and toploaders protect cards that would cost far more to replace.",
+      },
+      { type: "h2", text: "Common beginner mistakes" },
+      {
+        type: "ul",
+        items: [
+          "Buying every sport and every new set at once, then running out of budget before finding a focus.",
+          "Chasing one rookie card through repeated boxes instead of buying the single.",
+          "Expecting sealed boxes to pay for themselves. Pulls are random, and most packs do not contain a valuable card.",
+          "Handling cards without sleeves, or storing them in damp rooms, hot cars or direct sunlight.",
+          "Buying on box art or social media hype without reading what the product actually contains.",
+        ],
+      },
+      {
+        type: "links",
+        items: [
+          { label: "Hobby Box vs Blaster Box: What Is the Difference?", href: "/blog/hobby-box-vs-blaster-box" },
+          { label: "Buying Sealed Trading Cards Online: A Simple Checklist", href: "/blog/buying-sealed-cards-online-checklist" },
+          { label: "How to Store Sealed Trading Card Boxes Safely", href: "/blog/how-to-store-sealed-trading-card-boxes" },
+          { label: "Sealed vs Singles: Should You Buy Sealed Pokémon Cards or Single Cards?", href: "/blog/sealed-vs-singles-pokemon-cards" },
+        ],
+      },
+      { type: "h2", text: "A simple first-month plan" },
+      {
+        type: "ul",
+        items: [
+          "Pick one sport and one team or player to collect.",
+          "Buy one sealed box or a few packs from a recent set, within a budget you set in advance.",
+          "Sleeve the best pulls immediately and store everything else neatly.",
+          "Use singles to fill the gaps in your team or player collection instead of opening more boxes.",
+          "Review what you enjoyed most, then decide whether your next purchase should be sealed product or singles.",
+        ],
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Starting a sports card collection does not require a big budget or expert knowledge. Pick one sport, learn the basic card types, read every box description before you buy, and protect the cards you pull. Buy sealed product for the fun of opening packs, buy singles for the exact cards you want, and let your team or player focus guide your spending. Do that, and your first month of collecting will be enjoyable instead of expensive guesswork.",
+      },
+    ],
+  },
 ];
 
 export const sortedPosts = () => [...posts].sort((a, b) => b.date.localeCompare(a.date));
