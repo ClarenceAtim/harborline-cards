@@ -107,7 +107,7 @@ function build(r: Row, i: number): Product {
   const stock = r.stock ?? DEFAULT_STOCK;
   const description =
     r.description ??
-    `${r.name} (${r.boxType.toLowerCase()}, ${r.set}, ${r.year}). Check the manufacturer's checklist for exact contents and odds before purchasing.`;
+    `${r.name} is a sealed ${r.boxType.toLowerCase()} from the ${r.brand} ${r.set} release (${r.year}). It is listed for collectors who want factory-sealed product from this set; check the manufacturer's checklist for exact contents and odds before purchasing.`;
   return {
     id: `p${String(i + 1).padStart(3, "0")}`,
     slug,
@@ -130,7 +130,7 @@ function build(r: Row, i: number): Product {
     featured: !!r.featured,
     specifications: { Brand: r.brand, Set: r.set, Year: String(r.year), Format: r.boxType, ...(r.specs ?? {}) },
     seoTitle: r.name,
-    seoDescription: `Buy ${r.name}. ${r.boxType} from ${r.set}. Order request with seller-confirmed payment.`,
+    seoDescription: `Shop ${r.name}, a sealed ${r.boxType.toLowerCase()} from the ${r.brand} ${r.set} release (${r.year}). Order request with seller-confirmed payment and shipping.`,
     updated: r.updated ?? CATALOG_LAST_EDITED,
     verification: { name: "verified", price: "verified", stock: r.stockVerified ? "verified" : "placeholder", image: img ? "verified" : "placeholder" },
     source: r.source ?? SOURCE,
