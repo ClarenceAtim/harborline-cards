@@ -27,6 +27,11 @@ const categoryLastmod = (slug: CategorySlug) => {
   return new Date(dates[dates.length - 1] ?? "2026-10-12");
 };
 
+// Product pages render their description/meta from lib/products.ts and lib/catalog-merge.ts.
+// Bump this when that product-page template changes so the sitemap lastmod matches the live page.
+const PRODUCT_TEMPLATE_LASTMOD = "2026-11-25";
+const productLastmod = (updated: string) => new Date(updated > PRODUCT_TEMPLATE_LASTMOD ? updated : PRODUCT_TEMPLATE_LASTMOD);
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteUrl();
   return [
@@ -44,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...products.map((p) => ({
       url: base + "/products/" + p.slug,
-      lastModified: new Date(p.updated),
+      lastModified: productLastmod(p.updated),
       changeFrequency: "weekly" as const,
       priority: 0.7,
       ...(p.image ? { images: [base + p.image] } : {}),
