@@ -814,6 +814,82 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "how-to-protect-pokemon-cards",
+    title: "How to Protect Pokémon Cards: Sleeves, Toploaders and Binders Explained",
+    description:
+      "Penny sleeves, toploaders, binders and storage boxes all protect cards in different ways. Here is what each one does and how to use them together.",
+    date: "2026-11-26",
+    shopLink: { label: "Browse Pokémon cards", href: "/pokemon" },
+    body: [
+      {
+        type: "p",
+        text: "A Pokémon card can leave a booster pack in perfect shape and pick up its first scratch, dent or whitened corner within minutes. Most of that damage does not come from playing the game. It comes from bare hands, loose piles on a table, rubber bands, and storage that lets cards rub against each other. The good news is that protecting cards is simple and inexpensive. A few basic supplies, used in the right order, will keep your pulls and singles looking the way they did the day you got them.",
+      },
+      { type: "h2", text: "Why protection matters more than most collectors think" },
+      {
+        type: "p",
+        text: "Condition decides a large part of what a card is worth and how good it looks in a binder. A card that stays Near Mint is worth more than the same card with edge wear, and it has a better chance of earning a high grade if you ever send it to a grading company. Damage is also permanent. You cannot undo a scratch, a bent corner or a fingerprint pressed into a holofoil surface. That is why experienced collectors sleeve cards the moment they are pulled, before they are sorted, traded or shown to anyone. Protection is not an extra step for valuable cards only. It is the habit that keeps ordinary cards ordinary, and good cards good.",
+      },
+      { type: "h2", text: "Penny sleeves: the first layer for every card" },
+      {
+        type: "p",
+        text: "A penny sleeve is a thin, clear plastic sleeve that fits closely around a single card. It is the first layer of protection, and every card you care about should go into one. The sleeve stops the card surface from touching other cards, fingers and dust, and it makes the card safe to slide into a binder pocket or a toploader. Sleeves come in standard sizes for trading cards, so look for ones made for Pokémon and other standard-size cards rather than oversized or undersized versions. Slide the card in gently from the top, holding it by the edges. If a sleeve is torn, cloudy or too tight, replace it. A damaged sleeve can scratch the card it is meant to protect.",
+      },
+      { type: "h2", text: "Toploaders and semi-rigids: protection for your best pulls" },
+      {
+        type: "p",
+        text: "A toploader is a hard plastic holder with an opening at the top. The card, already in its penny sleeve, slides inside, and the rigid plastic guards it against bends, dents and pressure. Toploaders are the standard choice for valuable pulls, cards you plan to sell, and cards you want to keep separate from a binder. Semi-rigid holders are thinner and more flexible. They are commonly used when mailing cards or sending them for grading, because they hold the card firmly without the bulk of a toploader. Whichever you use, the rule is the same: the penny sleeve goes on first, then the hard holder. Never force a card into a holder that feels too tight, and never put an unsleeved card into a toploader, where it can slide around and wear at the edges.",
+      },
+      { type: "h2", text: "Binders: the best home for a collection you want to look at" },
+      {
+        type: "p",
+        text: "A binder keeps cards organized, visible and easy to enjoy, which is why most collectors keep the heart of their collection in one. The important detail is the pocket design. Side-loading pockets open on the side, so cards are less likely to slide out when the binder is moved or carried. Top-loading pockets open at the top and are more common in cheaper binders and removable pages. Either can work, but side-loading pockets are generally the safer choice for cards you handle often. Whichever binder you choose, sleeve cards before they go into the pockets, do not overfill a pocket with more than one card, and store the binder upright or flat without heavy weight pressing on it. A binder that is squeezed, dropped or left in a hot car can bend every card inside it at once.",
+      },
+      { type: "h2", text: "Storage boxes and team bags: bulk cards and sealed packs" },
+      {
+        type: "p",
+        text: "Not every card belongs in a binder. Bulk commons, duplicates and cards waiting to be sorted are best kept in a storage box made for trading cards. These boxes hold cards upright in rows, and sleeved cards or dividers keep them from rubbing and leaning. For small groups of cards, such as a playset or cards set aside for a trade, a team bag is a resealable plastic bag sized for a small stack of sleeved cards. It keeps the group together and clean without the pressure of a rubber band, which should never be used on cards. Rubber bands bend corners and leave marks, and loose piles in a shoebox let cards slide, bend and scratch each other every time the box moves.",
+      },
+      { type: "h2", text: "A simple protection routine that works" },
+      {
+        type: "ul",
+        items: [
+          "Sleeve every card you pull or buy as soon as you handle it, before sorting or trading.",
+          "Put valuable pulls, hits and cards you may sell into a toploader over the sleeve.",
+          "Keep binder cards sleeved, one card per pocket, and use side-loading pockets when you can.",
+          "Store bulk and duplicates upright in a trading card storage box, not in loose piles.",
+          "Use team bags for small stacks and trades, and never use rubber bands on cards.",
+          "Keep everything in a cool, dry room away from sunlight, damp basements and hot cars.",
+        ],
+      },
+      { type: "h2", text: "Common mistakes to avoid" },
+      {
+        type: "ul",
+        items: [
+          "Handling holofoil cards with bare fingers. Skin oils and grit can mark the foil surface, so hold cards by the edges or sleeve them first.",
+          "Skipping the penny sleeve and putting a card straight into a toploader or binder pocket, where it can slide and wear.",
+          "Overfilling binder pockets or stacking heavy boxes on top of binders and toploaders.",
+          "Reusing torn, dirty or cloudy sleeves and holders. Replace supplies that no longer protect.",
+          "Leaving cards loose on tables, in pockets or in cars, where bends and scratches happen quickly.",
+        ],
+      },
+      {
+        type: "links",
+        items: [
+          { label: "Pokémon Card Condition Guide: What Near Mint, Lightly Played and Heavily Played Really Mean", href: "/blog/pokemon-card-condition-guide" },
+          { label: "How Pokémon Card Grading Works: PSA, BGS and CGC Explained", href: "/blog/pokemon-card-grading-explained" },
+          { label: "How to Store Sealed Trading Card Boxes Safely", href: "/blog/how-to-store-sealed-trading-card-boxes" },
+          { label: "Sealed vs Singles: Should You Buy Sealed Pokémon Cards or Single Cards?", href: "/blog/sealed-vs-singles-pokemon-cards" },
+        ],
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Protecting Pokémon cards does not require expensive equipment or complicated habits. A penny sleeve on every card, a toploader for the pulls that matter, a binder with safe pockets for the collection you enjoy, and a proper storage box for the rest will prevent nearly all of the damage that lowers a card's condition. Start the habit with your next pack or purchase: sleeve first, then sort. Your future self, whether you are grading, selling or simply flipping through a binder, will be glad you did.",
+      },
+    ],
+  },
 ];
 
 export const sortedPosts = () => [...posts].sort((a, b) => b.date.localeCompare(a.date));
