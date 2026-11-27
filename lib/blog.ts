@@ -890,6 +890,114 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "pokemon-card-rarities-explained",
+    title: "Pokémon Card Rarities Explained: What the Symbols Mean",
+    description:
+      "Circle, diamond or gold star? Learn how to read Pokémon card rarity symbols, from Common to Hyper Rare, and what rarity means for collectors.",
+    date: "2026-11-27",
+    shopLink: { label: "Browse sealed Pokémon products", href: "/pokemon" },
+    body: [
+      {
+        type: "p",
+        text: "Every Pokémon card carries a small symbol near the bottom, next to the card number. That symbol is the card's rarity, and it tells you roughly how often the card appears in booster packs. Learning to read it makes sorting pulls, reading set checklists and comparing singles much easier. This guide explains the modern rarity system and what rarity does and does not tell you about a card's value.",
+      },
+      { type: "h2", text: "Where to find the rarity symbol" },
+      {
+        type: "p",
+        text: "On modern English Pokémon cards, the rarity symbol sits in the bottom-left corner, next to the collector number. The number is usually written as two figures separated by a slash, such as 025/198: the first figure is the card's number in the set, and the second is the advertised size of the set. On older cards the symbol is usually in the bottom-right corner instead. When you open a pack, this corner is the fastest way to sort what you pulled and decide which cards deserve a sleeve right away.",
+      },
+      { type: "h2", text: "The three basic rarities: Common, Uncommon and Rare" },
+      {
+        type: "p",
+        text: "Three symbols have been used since the earliest Pokémon sets, and they still form the base of every pack.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Common: a black circle. Commons make up most of a pack. They are usually basic Pokémon and simple Trainer cards that form the backbone of a set.",
+          "Uncommon: a black diamond. Uncommons appear less often than Commons. Many are evolved Pokémon and Trainer cards.",
+          "Rare: a black star. Rares are the hardest of the three basic rarities to pull. Since the Scarlet and Violet series began in 2023, Rare cards are holographic, so the old split between Rare and Holo Rare no longer applies in modern sets.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Most of what you need for a deck or a set comes from these three rarities, and they are the cards you will pull again and again.",
+      },
+      { type: "h2", text: "The higher rarities in modern sets" },
+      {
+        type: "p",
+        text: "From the Scarlet and Violet series onward, the rarer cards carry their own symbols instead of all sharing one star. The colour and number of stars tell you the tier. From lower to higher, the main tiers are:",
+      },
+      {
+        type: "ul",
+        items: [
+          "Double Rare: two black stars. This is the standard rarity for regular Pokémon ex cards, the powerful Pokémon that anchor many decks and collections.",
+          "Ultra Rare: two silver stars. Ultra Rares are full-art versions of Pokémon ex and Supporter cards, with artwork that covers the whole card.",
+          "Illustration Rare: one gold star. These are full-card alternate-art versions of regular Pokémon, chosen for their artwork rather than their power in the game.",
+          "Special Illustration Rare: two gold stars. This is the premium art tier for Pokémon ex and Supporters, with detailed scenes that collectors chase hardest.",
+          "Hyper Rare: three gold stars. Hyper Rares are the gold cards at the very end of a set, and they are among the hardest cards to pull.",
+        ],
+      },
+      {
+        type: "p",
+        text: "Newer sets can add special tiers of their own, so treat this ladder as the standard framework rather than a complete list for every release. The set checklist and the symbol on the card itself are always the final word.",
+      },
+      { type: "h2", text: "Secret Rares, promos and reverse holos" },
+      {
+        type: "p",
+        text: "Three terms cause most of the confusion for new collectors, and none of them is a rarity symbol on its own.",
+      },
+      {
+        type: "ul",
+        items: [
+          "Secret Rare: a card whose collector number is higher than the advertised set size, such as 210/198. Ultra Rares, Illustration Rares, Special Illustration Rares and Hyper Rares are secret rares in modern sets because their numbers sit beyond the main set.",
+          "Promo: a card printed outside a normal set, for example in a special collection box. Promo cards carry a star with the word promo, and their own numbering.",
+          "Reverse holo: a finish, not a rarity. A reverse holo card has a holographic pattern on the card frame instead of the artwork. Commons, Uncommons and Rares can all appear as reverse holos, so always check the symbol as well as the shine.",
+        ],
+      },
+      { type: "h2", text: "Older cards use a simpler system" },
+      {
+        type: "p",
+        text: "Before 2023, English cards used only the circle, diamond and star system, and the star covered everything from a plain Rare to the most valuable cards in a set. A star on an older card tells you the card is at least Rare, but not exactly which tier it belongs to. For older sets, the finish, artwork and collector number matter more, and a set checklist is the reliable way to identify what you have.",
+      },
+      { type: "h2", text: "What rarity tells you about value, and what it does not" },
+      {
+        type: "p",
+        text: "Rarity is a guide to how hard a card is to pull, and harder pulls usually cost more. But rarity alone does not set a price. Demand matters just as much: a popular Pokémon, strong artwork or a card players need for decks can make a lower rarity worth more than a higher rarity of a less popular card. Condition matters too, so sleeve good pulls immediately. Treat rarity as the first clue, then look at the specific card, its condition and current demand.",
+      },
+      { type: "h2", text: "How to use rarities when you buy sealed product" },
+      {
+        type: "p",
+        text: "A booster pack contains a mix of rarities, and the higher tiers are never guaranteed in a single pack. Special Illustration Rares and Hyper Rares are chase cards precisely because most packs do not contain one. If your goal is one specific card, buying that single is usually cheaper than opening pack after pack hoping to pull it. If your goal is the fun of opening packs, sealed product is the right choice, as long as you budget for the experience rather than expecting a top pull. Be wary of any seller who promises a specific high-rarity card inside a sealed pack.",
+      },
+      { type: "h2", text: "A quick sorting routine for new pulls" },
+      {
+        type: "ul",
+        items: [
+          "Check the bottom corner of each card for the rarity symbol and collector number.",
+          "Sleeve Rares and everything above them right away, and put the best pulls in toploaders.",
+          "Separate reverse holos from plain versions of the same card, since they are different collectibles.",
+          "Note any card numbered beyond the set size. Those secret rares are easy to miss in a quick sort.",
+          "Store Commons and Uncommons neatly in a storage box so duplicates stay easy to find for decks and trades.",
+        ],
+      },
+      {
+        type: "links",
+        items: [
+          { label: "How to Start Collecting Pokémon Cards in 2026", href: "/blog/how-to-start-collecting-pokemon-cards" },
+          { label: "How to Protect Pokémon Cards: Sleeves, Toploaders and Binders Explained", href: "/blog/how-to-protect-pokemon-cards" },
+          { label: "Pokémon Card Condition Guide: What Near Mint, Lightly Played and Heavily Played Really Mean", href: "/blog/pokemon-card-condition-guide" },
+          { label: "Sealed vs Singles: Should You Buy Sealed Pokémon Cards or Single Cards?", href: "/blog/sealed-vs-singles-pokemon-cards" },
+        ],
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "Pokémon card rarity is simple once you know the symbols: a circle for Common, a diamond for Uncommon, a star for Rare, and black, silver and gold stars for the higher modern tiers up to Hyper Rare. Check the symbol and the collector number together, remember that reverse holo is a finish rather than a rarity, and use older set checklists when a single star is all an older card gives you. Rarity tells you how hard a card is to pull, while demand and condition decide what it is worth. Read the corner of the card first, sleeve your best pulls, and every pack you open will make more sense.",
+      },
+    ],
+  },
 ];
 
 export const sortedPosts = () => [...posts].sort((a, b) => b.date.localeCompare(a.date));
