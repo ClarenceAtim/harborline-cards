@@ -998,6 +998,89 @@ export const posts: Post[] = [
       },
     ],
   },
+  {
+    slug: "pokemon-cards-gift-guide",
+    title: "How to Choose Pokémon Cards as a Gift: A Guide for Every Collector",
+    description:
+      "Booster packs, tins, Elite Trainer Boxes or a single card? Match the Pokémon gift to the collector and avoid the mistakes gift buyers make most.",
+    date: "2026-11-28",
+    shopLink: { label: "Browse sealed Pokémon products", href: "/pokemon" },
+    body: [
+      {
+        type: "p",
+        text: "Pokémon cards make an easy gift to buy and a surprisingly easy gift to get wrong. The shelves hold booster packs, tins, boxes and collections in several sizes, and the right choice depends less on the product than on the person receiving it. A sealed box that delights a serious collector can overwhelm a child who just wants to open packs, while a single card of a favourite Pokémon can mean more to a returning fan than a large box of an unfamiliar set. This guide covers how to match the gift to the collector and what to check before you buy.",
+      },
+      { type: "h2", text: "Start with the person, not the product" },
+      {
+        type: "p",
+        text: "Before you look at any product, answer three quick questions. Do they already collect, or would this be their first cards? Do they play the trading card game, collect for the artwork and characters, or both? Is there a favourite Pokémon or an era they grew up with? Those answers narrow the shelves down quickly. A first-time collector needs something simple and fun to open. A player needs cards from current sets they can use in decks. A long-time collector usually has strong preferences about sets and languages, so sealed product from a recent set is safer than guessing at a specific card. A favourite Pokémon is gold: it points you to sealed products that feature it and to single cards of that Pokémon itself.",
+      },
+      { type: "h2", text: "Sealed products: the safest gift for most people" },
+      {
+        type: "p",
+        text: "For most gift buyers, sealed product is the right call. It arrives new, carries no questions about condition, and opening packs is part of the fun. The formats differ mainly in size and in what else is in the box. Booster packs and small blister packs are the simplest option, well suited to stockings and young collectors. Tins and collection boxes add a display piece and usually a promo card, which makes them feel like a complete gift. Booster bundles and Elite Trainer Boxes hold more packs, and Elite Trainer Boxes also include accessories such as sleeves and dice, so they suit someone building a collection or starting to play. Booster boxes hold the most packs and suit collectors who open a lot of product. Contents vary by set, so read the product description before you buy.",
+      },
+      { type: "h2", text: "Matching the gift to the collector" },
+      {
+        type: "ul",
+        items: [
+          "Kids and first-time collectors: a tin, a small collection box or a few booster packs. The opening experience matters more than the size of the box, and a promo card gives them something special right away.",
+          "Returning fans who collected years ago: a sealed product from a recent set, or a single card of a Pokémon they loved as a child. Familiar characters land better than unfamiliar set names.",
+          "Players who build decks: sealed product from the newest sets, since newer cards stay legal in standard play longer. An Elite Trainer Box is a practical choice because the sleeves and dice get used at the table.",
+          "Serious collectors: a booster box or Elite Trainer Box from a set they collect, or a high-condition single they are chasing. If unsure which set they collect, ask first.",
+          "Someone who seems to have everything: supplies and storage. A good binder, sleeves, toploaders or a storage box are gifts collectors always use, and they pair well with any sealed product.",
+        ],
+      },
+      { type: "h2", text: "When a single card makes a better gift" },
+      {
+        type: "p",
+        text: "Sealed product is a gamble by design: nobody knows which cards are inside. That is part of the fun, but it makes sealed product the wrong gift when the goal is one specific card. If the person has a favourite Pokémon, a card they need for a deck, or a gap in a set they are completing, buying that exact single is usually the better gift, and often the cheaper one. The trade-off is that singles require more care. Condition matters, so buy from a seller who describes it honestly and shows the actual card where possible. A Near Mint card should look clean, with sharp corners and no visible wear. For a centrepiece gift, a graded card in a sealed slab removes the guesswork. Choose sealed for the opening experience, and a single for the exact card.",
+      },
+      { type: "h2", text: "What to check before you buy" },
+      {
+        type: "ul",
+        items: [
+          "Language: Pokémon products are printed in several languages, and listings sometimes offer German, Spanish or other editions at different prices. Check the language on the listing so the gift matches what the collector reads and collects.",
+          "Contents: pack counts, promo cards and accessories differ between products and sets. Read the full product description instead of judging by the box art alone.",
+          "Sealed condition: for sealed gifts, look for original factory wrap and undamaged packaging. Dented boxes and torn wrap lower the appeal of the gift and can signal tampered product.",
+          "Age guidance: packaging carries a recommended age. For young children, simpler products with fewer small accessories are the better fit.",
+          "Delivery timing: holiday shipping takes longer across the United States and Canada, so order early and keep the tracking until the gift is in hand.",
+          "Returns: check the store's return policy before you buy, in case the collector already owns the same product.",
+        ],
+      },
+      { type: "h2", text: "Gifts that pair well with cards" },
+      {
+        type: "p",
+        text: "A small add-on can turn a good card gift into a complete one. Penny sleeves protect good pulls the moment they are opened, toploaders keep the best cards safe, and a binder gives a new collector somewhere to keep and show the collection from day one. These supplies cost little, suit every level of collector, and solve the problem every new collector faces within minutes: a pile of loose cards with nowhere safe to put them. Pairing a sealed product with sleeves and a binder covers both the fun of opening and the habit of protecting what was pulled.",
+      },
+      { type: "h2", text: "Common gift mistakes to avoid" },
+      {
+        type: "ul",
+        items: [
+          "Buying the biggest box by default. More packs is not always better; a smaller product matched to the person beats a large box from a set they do not collect.",
+          "Ignoring the language on the listing and gifting cards the collector cannot read or does not collect.",
+          "Buying loose, unsealed packs or repacked products from unknown sellers. Stick to factory-sealed product from reputable stores.",
+          "Paying a premium for a single card without checking its condition description and photos.",
+          "Waiting until the last week of December and hoping shipping arrives in time. Holiday delivery delays are normal, so buy early.",
+          "Forgetting protection. A gift of cards with no sleeves means the best pulls sit unprotected from the first day.",
+        ],
+      },
+      {
+        type: "links",
+        items: [
+          { label: "How to Start Collecting Pokémon Cards in 2026", href: "/blog/how-to-start-collecting-pokemon-cards" },
+          { label: "Sealed Pokémon TCG Products Explained: Booster Boxes vs Elite Trainer Boxes", href: "/blog/pokemon-booster-box-vs-elite-trainer-box" },
+          { label: "Sealed vs Singles: Should You Buy Sealed Pokémon Cards or Single Cards?", href: "/blog/sealed-vs-singles-pokemon-cards" },
+          { label: "How to Protect Pokémon Cards: Sleeves, Toploaders and Binders Explained", href: "/blog/how-to-protect-pokemon-cards" },
+        ],
+      },
+      { type: "h2", text: "The bottom line" },
+      {
+        type: "p",
+        text: "The best Pokémon gift starts with the collector: their experience, whether they play or collect, and the Pokémon they love. Sealed product is the safe, fun default, with tins and small boxes for new collectors, Elite Trainer Boxes for players, and booster boxes for collectors who open in volume. Choose a single when one exact card is the point, and check its condition carefully. Whatever you pick, confirm the language, contents and sealed condition, order early in the holiday season, and add sleeves or a binder so the gift is protected from the first pack.",
+      },
+    ],
+  },
 ];
 
 export const sortedPosts = () => [...posts].sort((a, b) => b.date.localeCompare(a.date));
